@@ -1,5 +1,6 @@
 <script context="module">
-	
+			export const prerender = true;
+
 	// see https://kit.svelte.dev/docs#loading
 	export const load = async ({ fetch, page }) => {
 		console.log(page.params.id)
