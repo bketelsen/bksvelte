@@ -18,11 +18,11 @@ class BloxData{
     async getOne(id) {
         await this._initialize();
        
-        var article = this.data.find(a => {
+        var item = this.data.find(a => {
             return a.id === id
         })
     
-        return article;
+        return item;
     }
     async getAll() {
         await this._initialize();
