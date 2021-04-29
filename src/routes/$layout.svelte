@@ -1,4 +1,19 @@
+<script context="module">
+	import {getWebsite}	 from '$lib/dataStore'
+
+	// see https://kit.svelte.dev/docs#loading
+	export const load = async () => {
+			const website = await getWebsite('brian.dev');
+			return {
+				props: { website }
+			};
+
+	};
+</script>
+
 <script>
+	export let website;
+	console.log(website)
 	import Header from '$lib/Header/index.svelte';
 	import '../app.css';
 </script>

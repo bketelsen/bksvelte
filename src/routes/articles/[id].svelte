@@ -1,23 +1,13 @@
 <script context="module">
+	import {getArticle}	 from '$lib/dataStore'
 
 	// see https://kit.svelte.dev/docs#loading
 	export const load = async ({ fetch, page }) => {
-		console.log(page.params.id)
-		const res = await fetch(`/articles/${page.params.id}.json`);
-	
-		if (res.ok) {
-			const article = await res.json();
-	
+			const article = await getArticle(page.params.id);
 			return {
 				props: { article }
 			};
-		}
-	
-		const { message } = await res.json();
-	
-		return {
-			error: new Error(message)
-		};
+
 	};
 </script>
 
