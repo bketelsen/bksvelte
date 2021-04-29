@@ -1,19 +1,23 @@
 <script context="module">
-	import {websites}	 from '$lib/dataStore'
+	import {websites,categories}	 from '$lib/dataStore'
 
 	// see https://kit.svelte.dev/docs#loading
 	export const load = async () => {
 
 			const website = await websites.getOne('brian.dev');
+			const cc = await categories.getAll();
 			return {
-				props:  {website }
+				props:  {website: website,categories: cc}
 			};
 
 	};
 </script>
 
 <script>
+
 	export let website;
+	export let categories;
+
 	import Header from '$lib/Header/index.svelte';
 	import '../app.css';
 </script>
