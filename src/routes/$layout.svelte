@@ -18,7 +18,9 @@
 	export let website;
 	export let categories;
 
-	import Navigation from '$lib/Navigation/index.svelte';
+	import Navigation from '$lib/Navigation/index.svelte'	;
+
+	import Footer from '$lib/Footer/index.svelte'	;
 	import "../app.postcss";
 
 </script>
@@ -26,9 +28,7 @@
 <Navigation {categories}/>
 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 	<slot />
-	<footer>
-		<p>&copy; 2021 <a href="{website.url}">Brian Ketelsen</a></p>
-	</footer>
+<Footer />
   </div>
 
 
