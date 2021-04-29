@@ -22,7 +22,7 @@
 	import '../app.css';
 </script>
 
-<Header />
+<Header {categories}/>
 
 <main>
 	<slot />
