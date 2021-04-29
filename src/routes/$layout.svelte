@@ -1,11 +1,12 @@
 <script context="module">
-	import {getWebsite}	 from '$lib/dataStore'
+	import {blox}	 from '$lib/dataStore'
 
 	// see https://kit.svelte.dev/docs#loading
 	export const load = async () => {
-			const website = await getWebsite('brian.dev');
+
+			const website = await blox.getWebsite('brian.dev');
 			return {
-				props: { website }
+				props:  {website }
 			};
 
 	};
@@ -13,7 +14,6 @@
 
 <script>
 	export let website;
-	console.log(website)
 	import Header from '$lib/Header/index.svelte';
 	import '../app.css';
 </script>
@@ -25,7 +25,7 @@
 </main>
 
 <footer>
-	<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
+	<p>&copy; 2021 <a href="{website.url}">Brian Ketelsen</a></p>
 </footer>
 
 <style>

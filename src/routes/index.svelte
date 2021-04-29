@@ -1,5 +1,7 @@
 <script context="module">
 	export const prerender = true;
+	console.log("index");
+
 </script>
 
 <script>

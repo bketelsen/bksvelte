@@ -11,6 +11,7 @@ export const getContext = (request) => {
 };
 
 export const handle = async ({ request, render }) => {
+
 	// TODO https://github.com/sveltejs/kit/issues/1046
 	const response = await render({
 		...request,
