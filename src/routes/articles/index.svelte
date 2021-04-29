@@ -1,10 +1,12 @@
 <script context="module">
-	//import {data}	 from '$lib/dataStore'
+	import {articles}	 from '$lib/dataStore'
 
 	// see https://kit.svelte.dev/docs#loading
 	export const load = async ({ fetch }) => {
+		const aa = await articles.getAll();
+
 			return {
-				props: { articles: {} }
+				props: { articles: aa }
 			};
 	};
 </script>

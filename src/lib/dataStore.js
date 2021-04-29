@@ -85,3 +85,37 @@ class Blox{
 
 export const blox = new Blox('https://github.com/bketelsen/bkml/releases/download/blox/data.json');
 
+class BloxData{
+    constructor(sourceURL){
+        this.dataSource = sourceURL;
+    }
+    async _doInitialize() {
+        console.log("Loading data!")
+        this.data = await (await fetch(this.dataSource)).json();
+      }
+    
+      async _initialize() {
+        // prevent concurrent calls firing initialization more than once
+        if (!this.initializationPromise) {
+          this.initializationPromise = this._doInitialize();
+        }
+        return this.initializationPromise;
+      }
+    
+    async getOne(id) {
+        await this._initialize();
+       
+        var article = this.data.find(a => {
+            return a.id === id
+        })
+    
+        return article;
+    }
+    async getAll() {
+        await this._initialize();
+        return this.data;
+    }
+    
+}
+
+export const articles = new BloxData('https://api.brian.dev/api/articles?_expand=category&_expand=profile');

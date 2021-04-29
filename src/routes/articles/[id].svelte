@@ -1,9 +1,9 @@
 <script context="module">
-	import {blox}	 from '$lib/dataStore'
+	import {articles}	 from '$lib/dataStore'
 
 	// see https://kit.svelte.dev/docs#loading
 	export const load = async ({ fetch, page }) => {
-			const article = await blox.getArticle(page.params.id);
+			const article = await articles.getOne(page.params.id);
 			return {
 				props: { article }
 			};
