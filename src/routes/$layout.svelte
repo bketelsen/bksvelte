@@ -18,18 +18,19 @@
 	export let website;
 	export let categories;
 
-	import Header from '$lib/Header/index.svelte';
+	import Navigation from '$lib/Navigation/index.svelte';
 	import "../app.postcss";
 
 </script>
 
-<Header {categories}/>
-
-<main>
+<Navigation {categories}/>
+<div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 	<slot />
-</main>
+	<footer>
+		<p>&copy; 2021 <a href="{website.url}">Brian Ketelsen</a></p>
+	</footer>
+  </div>
 
-<footer>
-	<p>&copy; 2021 <a href="{website.url}">Brian Ketelsen</a></p>
-</footer>
+
+
 
