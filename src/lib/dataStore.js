@@ -119,3 +119,4 @@ class BloxData{
 }
 
 export const articles = new BloxData('https://api.brian.dev/api/articles?_expand=category&_expand=profile');
+export const websites = new BloxData('https://api.brian.dev/api/websites?_expand=profile');

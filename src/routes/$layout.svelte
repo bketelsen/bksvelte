@@ -1,10 +1,10 @@
 <script context="module">
-	import {blox}	 from '$lib/dataStore'
+	import {websites}	 from '$lib/dataStore'
 
 	// see https://kit.svelte.dev/docs#loading
 	export const load = async () => {
 
-			const website = await blox.getWebsite('brian.dev');
+			const website = await websites.getOne('brian.dev');
 			return {
 				props:  {website }
 			};
