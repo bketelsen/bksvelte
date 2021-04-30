@@ -4,6 +4,7 @@ specifiers:
   '@fontsource/fira-mono': ^4.2.2
   '@lukeed/uuid': ^2.0.0
   '@sveltejs/kit': next
+  '@tailwindcss/typography': ^0.4.0
   autoprefixer: ^10.2.5
   cookie: ^0.4.1
   cssnano: ^5.0.1
@@ -21,6 +22,7 @@ specifiers:
 dependencies:
   '@fontsource/fira-mono': 4.2.2
   '@lukeed/uuid': 2.0.0
+  '@tailwindcss/typography': 0.4.0_tailwindcss@2.1.2
   cookie: 0.4.1
 
 devDependencies:
@@ -119,7 +121,7 @@ packages:
       svelte: ^3.32.1
       vite: ^2.2.3
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 1.0.0-next.7_svelte@3.37.0+vite@2.2.3
+      '@sveltejs/vite-plugin-svelte': 1.0.0-next.8_svelte@3.37.0+vite@2.2.3
       cheap-watch: 1.0.3
       sade: 1.7.4
       svelte: 3.37.0
@@ -129,27 +131,39 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/vite-plugin-svelte/1.0.0-next.7_svelte@3.37.0+vite@2.2.3:
-    resolution: {integrity: sha512-ENvKYY36jrvFP7h1G87k5uOoEh5UM1m8n40J2duqV/R3wHnxfW81SCR1aXo+5CVU8Prm3/jtS4TWs8CUTqO1fw==}
+  /@sveltejs/vite-plugin-svelte/1.0.0-next.8_svelte@3.37.0+vite@2.2.3:
+    resolution: {integrity: sha512-aHhfHa0ma9e/H+yv5NA3ie0lRy5duwnUA5fNlGzvxlGMW7DPno+UffbMPZ/HQo3J3Oh7BdC/IDwSwvgucJHPkw==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       svelte: ^3.37.0
-      vite: ^2.1.5
+      vite: ^2.2.3
     dependencies:
       '@rollup/pluginutils': 4.1.0
       chalk: 4.1.1
       debug: 4.3.2
       hash-sum: 2.0.0
       require-relative: 0.8.7
-      slash: 3.0.0
+      slash: 4.0.0
       source-map: 0.7.3
       svelte: 3.37.0
-      svelte-hmr: 0.14.2_svelte@3.37.0
+      svelte-hmr: 0.14.3_svelte@3.37.0
       vite: 2.2.3
     transitivePeerDependencies:
       - rollup
       - supports-color
     dev: true
+
+  /@tailwindcss/typography/0.4.0_tailwindcss@2.1.2:
+    resolution: {integrity: sha512-3BfOYT5MYNEq81Ism3L2qu/HRP2Q5vWqZtZRQqQrthHuaTK9qpuPfbMT5WATjAM5J1OePKBaI5pLoX4S1JGNMQ==}
+    peerDependencies:
+      tailwindcss: 2.0.0-alpha.24 || ^2.0.0
+    dependencies:
+      lodash.castarray: 4.4.0
+      lodash.isplainobject: 4.0.6
+      lodash.merge: 4.6.2
+      lodash.uniq: 4.5.0
+      tailwindcss: 2.1.2_941a81a5c9afb5d3c8bce0db60f786b1
+    dev: false
 
   /@trysound/sax/0.1.1:
     resolution: {integrity: sha512-Z6DoceYb/1xSg5+e+ZlPZ9v0N16ZvZ+wYMraFue4HYrE4ttONKtsvruIRf6t9TBR0YvSOfi1hUU0fJfBLCDYow==}
@@ -902,9 +916,21 @@ packages:
     resolution: {integrity: sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=}
     dev: true
 
+  /lodash.castarray/4.4.0:
+    resolution: {integrity: sha1-wCUTUV4wna3dTCTGDP3c9ZdtkRU=}
+    dev: false
+
+  /lodash.isplainobject/4.0.6:
+    resolution: {integrity: sha1-fFJqUtibRcRcxpC4gWO+BJf1UMs=}
+    dev: false
+
   /lodash.memoize/4.1.2:
     resolution: {integrity: sha1-vMbEmkKihA7Zl/Mj6tpezRguC/4=}
     dev: true
+
+  /lodash.merge/4.6.2:
+    resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
+    dev: false
 
   /lodash.toarray/4.4.0:
     resolution: {integrity: sha1-JMS/zWsvuji/0FlNsRedjptlZWE=}
@@ -916,7 +942,6 @@ packages:
 
   /lodash.uniq/4.5.0:
     resolution: {integrity: sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=}
-    dev: true
 
   /lodash/4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
@@ -1552,9 +1577,9 @@ packages:
       is-arrayish: 0.3.2
     dev: true
 
-  /slash/3.0.0:
-    resolution: {integrity: sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==}
-    engines: {node: '>=8'}
+  /slash/4.0.0:
+    resolution: {integrity: sha512-3dOsAHXXUkQTpOYcoAxLIorMTp4gIQr5IW3iVb7A7lFIp0VHhnynm9izx6TssdrIcVIESAlVjtnO2K8bg+Coew==}
+    engines: {node: '>=12'}
     dev: true
 
   /source-map/0.6.1:
@@ -1603,8 +1628,8 @@ packages:
       has-flag: 4.0.0
     dev: true
 
-  /svelte-hmr/0.14.2_svelte@3.37.0:
-    resolution: {integrity: sha512-aVIRSCRpOFGuLqjg12Z5hBhvjrrlqkJVMMGEK14iVD0kXI4l5dkpHCj35AEyieWNvyYTMtlyhZlpKPrIjFpxxQ==}
+  /svelte-hmr/0.14.3_svelte@3.37.0:
+    resolution: {integrity: sha512-N56xX405zLMw2tpGHKRx5h+kmdeZwxI21pvyC6OyBHJDCF6DlwWBm9TifdQmSD4dloWSmpDPzHWYa3CSjfopUg==}
     peerDependencies:
       svelte: '>=3.19.0'
     dependencies:

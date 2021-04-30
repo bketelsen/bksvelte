@@ -31,10 +31,11 @@ class BloxData{
     
 }
 
-export const articles = new BloxData('https://api.brian.dev/api/articles?_expand=category&_expand=profile');
-export const websites = new BloxData('https://api.brian.dev/api/websites?_expand=profile');
-export const pages = new BloxData('https://api.brian.dev/api/pages?_expand=image');
-export const profiles = new BloxData('https://api.brian.dev/api/profiles?_expand=image');
-export const categories = new BloxData('https://api.brian.dev/api/categories?_embed=articles');
-export const sections = new BloxData('https://api.brian.dev/api/sections');
-export const feeds = new BloxData('https://api.brian.dev/api/feeds?_embed=feeditems');
+console.log(import.meta.env.VITE_API_BASE );
+export const articles = new BloxData(`${import.meta.env.VITE_API_BASE}/articles?_expand=category&_expand=profile`);
+export const websites = new BloxData(`${import.meta.env.VITE_API_BASE}/websites?_expand=profile`);
+export const pages = new BloxData(`${import.meta.env.VITE_API_BASE}/pages?_expand=image`);
+export const profiles = new BloxData(`${import.meta.env.VITE_API_BASE}/profiles?_expand=image`);
+export const categories = new BloxData(`${import.meta.env.VITE_API_BASE}/categories?_embed=articles`);
+export const sections = new BloxData(`${import.meta.env.VITE_API_BASE}/sections`);
+export const feeds = new BloxData(`${import.meta.env.VITE_API_BASE}/feeds?_embed=feeditems`);
