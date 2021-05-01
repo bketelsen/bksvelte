@@ -18,19 +18,12 @@
 	export let website;
 	export let categories;
 
-	import Navigation from '$lib/Navigation/index.svelte'	;
+	import Container from '$lib/components/Container/index.svelte'	;
 
-	import Footer from '$lib/Footer/index.svelte'	;
 	import "../app.postcss";
 
 </script>
 
-<Navigation {categories}/>
-<div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-	<slot />
-<Footer />
-  </div>
+<Container>
 
-
-
-
+</Container>

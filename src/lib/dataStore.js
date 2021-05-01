@@ -3,7 +3,6 @@ class BloxData{
         this.dataSource = sourceURL;
     }
     async _doInitialize() {
-        console.log("Loading data!")
         this.data = await (await fetch(this.dataSource)).json();
       }
     

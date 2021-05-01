@@ -4,6 +4,8 @@ specifiers:
   '@fontsource/fira-mono': ^4.2.2
   '@lukeed/uuid': ^2.0.0
   '@sveltejs/kit': next
+  '@tailwindcss/aspect-ratio': ^0.2.0
+  '@tailwindcss/forms': ^0.3.2
   '@tailwindcss/typography': ^0.4.0
   autoprefixer: ^10.2.5
   cookie: ^0.4.1
@@ -22,11 +24,13 @@ specifiers:
 dependencies:
   '@fontsource/fira-mono': 4.2.2
   '@lukeed/uuid': 2.0.0
+  '@tailwindcss/aspect-ratio': 0.2.0
+  '@tailwindcss/forms': 0.3.2_tailwindcss@2.1.2
   '@tailwindcss/typography': 0.4.0_tailwindcss@2.1.2
   cookie: 0.4.1
 
 devDependencies:
-  '@sveltejs/kit': 1.0.0-next.93_svelte@3.37.0+vite@2.2.3
+  '@sveltejs/kit': 1.0.0-next.94_svelte@3.37.0+vite@2.2.3
   autoprefixer: 10.2.5_postcss@8.2.13
   cssnano: 5.0.2_postcss@8.2.13
   postcss: 8.2.13
@@ -113,15 +117,15 @@ packages:
       picomatch: 2.2.3
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.93_svelte@3.37.0+vite@2.2.3:
-    resolution: {integrity: sha512-WvmRj1Zk+SCbKYZGXCPlocOvGXRYGFOeZQC/k3C6KWAF11cM3H0i0mGzL0GmwrPmv35AjFtmH2iJ/J100ftUZw==}
+  /@sveltejs/kit/1.0.0-next.94_svelte@3.37.0+vite@2.2.3:
+    resolution: {integrity: sha512-2HkW+LqijRAHjKzKur3uLNblV8Ea1Vsju7LPVNYfMarJAk/mJrLTTm+29Qw6VSgaQsezlKfrgv3i+ZwgxZM1BQ==}
     engines: {node: '>= 12.17.0'}
     hasBin: true
     peerDependencies:
       svelte: ^3.32.1
       vite: ^2.2.3
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 1.0.0-next.8_svelte@3.37.0+vite@2.2.3
+      '@sveltejs/vite-plugin-svelte': 1.0.0-next.9_svelte@3.37.0+vite@2.2.3
       cheap-watch: 1.0.3
       sade: 1.7.4
       svelte: 3.37.0
@@ -131,8 +135,8 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/vite-plugin-svelte/1.0.0-next.8_svelte@3.37.0+vite@2.2.3:
-    resolution: {integrity: sha512-aHhfHa0ma9e/H+yv5NA3ie0lRy5duwnUA5fNlGzvxlGMW7DPno+UffbMPZ/HQo3J3Oh7BdC/IDwSwvgucJHPkw==}
+  /@sveltejs/vite-plugin-svelte/1.0.0-next.9_svelte@3.37.0+vite@2.2.3:
+    resolution: {integrity: sha512-ySB/GJsZV3h3jqjq5WIiaxVFkJK6vqtG9gS7Iw6SfUH9ZiFNw5JjQF69g68j9cNep3q4yRIYiG5/pI3YIdXEuA==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       svelte: ^3.37.0
@@ -152,6 +156,19 @@ packages:
       - rollup
       - supports-color
     dev: true
+
+  /@tailwindcss/aspect-ratio/0.2.0:
+    resolution: {integrity: sha512-v5LyHkwXj/4lI74B06zUrmWEdmSqS43+jw717pkt3fAXqb7ALwu77A8t7j+Bej+ZbdlIIqNMYheGN7wSGV1A6w==}
+    dev: false
+
+  /@tailwindcss/forms/0.3.2_tailwindcss@2.1.2:
+    resolution: {integrity: sha512-aj2/rJsGb2whAZ/BQWHWWQRSbhH0r/l1ozOByiv+ZNjBD84GMvb5dhAyfpeasFky+EJrAwX5eaqft8NQMZFWvA==}
+    peerDependencies:
+      tailwindcss: '>=2.0.0'
+    dependencies:
+      mini-svg-data-uri: 1.2.3
+      tailwindcss: 2.1.2_941a81a5c9afb5d3c8bce0db60f786b1
+    dev: false
 
   /@tailwindcss/typography/0.4.0_tailwindcss@2.1.2:
     resolution: {integrity: sha512-3BfOYT5MYNEq81Ism3L2qu/HRP2Q5vWqZtZRQqQrthHuaTK9qpuPfbMT5WATjAM5J1OePKBaI5pLoX4S1JGNMQ==}
@@ -968,6 +985,10 @@ packages:
     resolution: {integrity: sha512-I9jwMn07Sy/IwOj3zVkVik2JTvgpaykDZEigL6Rx6N9LbMywwUSMtxET+7lVoDLLd3O3IXwJwvuuns8UB/HeAg==}
     engines: {node: '>=4'}
     dev: true
+
+  /mini-svg-data-uri/1.2.3:
+    resolution: {integrity: sha512-zd6KCAyXgmq6FV1mR10oKXYtvmA9vRoB6xPSTUJTbFApCtkefDnYueVR1gkof3KcdLZo1Y8mjF2DFmQMIxsHNQ==}
+    dev: false
 
   /minimatch/3.0.4:
     resolution: {integrity: sha512-yJHVQEhyqPLUTgt9B83PXu6W3rx4MvvHvSUvToogpwoGDOUQ+yDrR0HRot+yOCdCO7u4hX3pWft6kWBBcqh0UA==}
