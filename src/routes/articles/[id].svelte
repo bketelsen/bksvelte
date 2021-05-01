@@ -22,20 +22,14 @@
 
 <script>
   export let article;
+  import Content from "$lib/components/Sections/Content/centered.svelte"
 </script>
 
 <svelte:head>
   <title>{article.title}</title>
 </svelte:head>
 
-<div class="article">
-  <h1>{article.title}</h1>
-
-  <div>
-    <div>{article.publish_date}</div>
-    <div>{article.body}</div>
-  </div>
-</div>
+<Content {article} />
 
 <style>
 </style>

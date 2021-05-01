@@ -24,7 +24,7 @@
 </script>
 
 <script>
-	 export let articles;
+	export let articles;
 	import Blog from '$lib/components/Sections/Blog/threecolumncard.svelte'
 </script>
 

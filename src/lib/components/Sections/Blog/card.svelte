@@ -26,14 +26,8 @@
             </a>
         </div>
         <div class="mt-6 flex items-center">
-            <div class="flex-shrink-0">
-                <a href="#">
-                </a>
-            </div>
-            <div class="ml-3">
-                <p class="text-sm font-medium text-gray-900">
-                    <a href="#" class="hover:underline"> {article.profile && article.profile.first_name} </a>
-                </p>
+
+            <div>
                 <div class="flex space-x-1 text-sm text-gray-500">
                     <time datetime="2020-03-10"> Mar 10, 2020 </time>
                     <span aria-hidden="true"> &middot; </span>

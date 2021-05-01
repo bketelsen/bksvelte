@@ -4,7 +4,6 @@
 	export let heading;
 	export let description;
 	export let articles;
-	console.log(articles)
 </script>
 
 <div class="relative bg-gray-50 py-16 sm:py-24 lg:py-32">
