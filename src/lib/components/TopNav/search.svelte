@@ -1,3 +1,35 @@
+<script>
+	import { page } from '$app/stores';
+	export let navigation;
+
+  let open = false;
+ 
+
+  function handleOpen(event){
+    console.log("Open:", open)
+    open = !open;
+
+    console.log("Open:",open)
+  }
+
+	function current(path) {
+		// index pages with one level
+		// including '/'
+		if ($page.path === path) {
+			return true;
+		}
+
+		if (path.length > 1) {
+			// everything below an index page
+			return $page.path.startsWith(path);
+		}
+    // fallthrough should only happen if I don't know javascript 
+    // well enough
+    console.log("Brian is an idiot");
+    return false
+	}
+</script>
+
 <nav class="bg-white shadow">
 	<div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
 		<div class="flex justify-between h-16">
@@ -16,30 +48,17 @@
 				</div>
 				<div class="hidden lg:ml-6 lg:flex lg:space-x-8">
 					<!-- Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" -->
-					<a
-						href="#"
-						class="border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
-					>
-						Dashboard
-					</a>
-					<a
-						href="#"
-						class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
-					>
-						Team
-					</a>
-					<a
-						href="#"
-						class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
-					>
-						Projects
-					</a>
-					<a
-						href="#"
-						class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
-					>
-						Calendar
-					</a>
+
+					{#each navigation as item}
+						<a
+							href={item.route}
+							class="{current(item.route)
+								? 'border-indigo-500 text-gray-900'
+								: 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'} inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+						>
+							{item.name}
+						</a>
+					{/each}
 				</div>
 			</div>
 			<div class="flex-1 flex items-center justify-center px-2 lg:ml-6 lg:justify-end">
@@ -79,6 +98,7 @@
 					class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
 					aria-controls="mobile-menu"
 					aria-expanded="false"
+          on:click={handleOpen}
 				>
 					<span class="sr-only">Open main menu</span>
 					<!--
@@ -127,38 +147,22 @@
 					</svg>
 				</button>
 			</div>
-			<div class="hidden lg:ml-4 lg:flex lg:items-center">
-
-			</div>
+			<div class="hidden lg:ml-4 lg:flex lg:items-center" />
 		</div>
 	</div>
 
 	<!-- Mobile menu, show/hide based on menu state. -->
-	<div class="lg:hidden" id="mobile-menu">
+	<div class="{open?"":"hidden"} lg:hidden" id="mobile-menu">
 		<div class="pt-2 pb-3 space-y-1">
 			<!-- Current: "bg-indigo-50 border-indigo-500 text-indigo-700", Default: "border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800" -->
-			<a
-				href="#"
-				class="bg-indigo-50 border-indigo-500 text-indigo-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
-				>Dashboard</a
-			>
-			<a
-				href="#"
-				class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
-				>Team</a
-			>
-			<a
-				href="#"
-				class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
-				>Projects</a
-			>
-			<a
-				href="#"
-				class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
-				>Calendar</a
-			>
+			{#each navigation as item}
+				<a
+					href={item.route}
+					class="{current(item.route)?"bg-indigo-50 border-indigo-500 text-indigo-700":"border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800"}  block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+					>{item.name}</a
+				>
+			{/each}
 		</div>
-		<div class="pt-4 pb-3 border-t border-gray-200">
-		</div>
+		<div class="pt-4 pb-3 border-t border-gray-200" />
 	</div>
 </nav>
