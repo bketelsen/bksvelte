@@ -19,7 +19,6 @@
 </script>
 
 <script>
-	import { page, navigating } from '$app/stores';
 
 	export let website;
 	export let categories;
@@ -42,7 +41,7 @@
 </script>
 
 <Container>
-<TopNav slot="header" {page} {navigation}></TopNav>
+<TopNav slot="header"  {navigation}></TopNav>
 <slot></slot>
 <Footer slot="footer"></Footer>
 </Container>
