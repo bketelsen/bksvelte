@@ -4,11 +4,20 @@
 
   // see https://kit.svelte.dev/docs#loading
   export const load = async ({ fetch, page }) => {
-    const article = await articles.getOne(page.params.id);
-    return {
-      props: { article },
-    };
-  };
+		const res = await fetch(`/articles/${page.params.id}.json`);
+    if (res.ok) {
+			const article = await res.json();
+			return {
+				props: { article }
+			};
+		}
+	
+		const { message } = await res.json();
+	
+		return {
+			error: new Error(message)
+		};
+	};
 </script>
 
 <script>

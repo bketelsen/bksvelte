@@ -5,12 +5,10 @@
 
 
   // see https://kit.svelte.dev/docs#loading
-  export const load = async ({ fetch }) => {
-    const res = await fetch("/articles.json")
-
-    if (res.ok) {
-			const articles  = await res.json();
-	
+	export const load = async ({ fetch }) => {
+		const res = await fetch('/articles.json');
+		if (res.ok) {
+			const articles = await res.json();
 			return {
 				props: { articles }
 			};
@@ -21,7 +19,7 @@
 		return {
 			error: new Error(message)
 		};
-  };
+	};
 </script>
 
 <script>

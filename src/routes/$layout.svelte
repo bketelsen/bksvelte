@@ -1,5 +1,5 @@
 <script context="module">
-	import {websites,categories}	 from '$lib/dataStore'
+/*	import {websites,categories}	 from '$lib/dataStore'
 
 	// see https://kit.svelte.dev/docs#loading
 	
@@ -15,7 +15,7 @@
 			};
 
 	};
-
+*/
 </script>
 
 <script>

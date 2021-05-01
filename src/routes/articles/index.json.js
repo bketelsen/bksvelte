@@ -1,7 +1,10 @@
-import { getAll } from './_api';
+import { articles } from "$lib/dataStore";
 
-export const get = async (request) => {
+export const get = async () => {
 
-	const response = await getAll();
-	return response;
+	const response = await articles.getAll();
+    return {
+		status: 200,
+		body: response
+	};
 };
