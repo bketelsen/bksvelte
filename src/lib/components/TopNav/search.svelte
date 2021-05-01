@@ -14,21 +14,25 @@
   }
 
 	function current(path) {
-    console.log($page.path, path)
+    console.log("page path:",$page.path)
+    console.log("nav path:",path)
+    console.log("comparing:",$page.path, path)
 		// index pages with one level
 		// including '/'
 		if ($page.path === path) {
+      console.log("returning:","true, equal")
 			return true;
 		}
 
-		if (path.length > 1) {
-			// everything below an index page
-			return $page.path.startsWith(path);
-		}
-    // fallthrough should only happen if I don't know javascript 
-    // well enough
-    console.log("Brian is an idiot");
-    return false
+    if (($page.path.length > path.length) && path ==="/") {
+      return false
+    }
+
+    if ($page.path.length > path.length) {
+      console.log("returning:",$page.path.startsWith(path))
+      return $page.path.startsWith(path)
+    }
+
 	}
 </script>
 
