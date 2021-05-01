@@ -1,36 +1,36 @@
-class BloxData{
-    constructor(sourceURL){
-        this.dataSource = sourceURL;
+class BloxData {
+  constructor(sourceURL) {
+    this.dataSource = sourceURL;
+  }
+  async _doInitialize() {
+    this.data = await (await fetch(this.dataSource)).json();
+  }
+
+  async _initialize() {
+    // prevent concurrent calls firing initialization more than once
+    if (!this.initializationPromise) {
+      this.initializationPromise = this._doInitialize();
     }
-    async _doInitialize() {
-        this.data = await (await fetch(this.dataSource)).json();
-      }
-    
-      async _initialize() {
-        // prevent concurrent calls firing initialization more than once
-        if (!this.initializationPromise) {
-          this.initializationPromise = this._doInitialize();
-        }
-        return this.initializationPromise;
-      }
-    
-    async getOne(id) {
-        await this._initialize();
-       
-        var item = this.data.find(a => {
-            return a.id === id
-        })
-    
-        return item;
-    }
-    async getAll() {
-        await this._initialize();
-        return this.data;
-    }
-    
+    return this.initializationPromise;
+  }
+
+  async getOne(id) {
+    await this._initialize();
+
+    var item = this.data.find(a => {
+      return a.id === id
+    })
+
+    return item;
+  }
+  async getAll() {
+    await this._initialize();
+    return this.data;
+  }
+
 }
 
-console.log(import.meta.env.VITE_API_BASE );
+console.log(import.meta.env.VITE_API_BASE);
 export const articles = new BloxData(`${import.meta.env.VITE_API_BASE}/articles?_expand=category&_expand=profile`);
 export const websites = new BloxData(`${import.meta.env.VITE_API_BASE}/websites?_expand=profile`);
 export const pages = new BloxData(`${import.meta.env.VITE_API_BASE}/pages?_expand=image`);
