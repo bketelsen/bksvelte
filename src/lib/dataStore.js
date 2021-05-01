@@ -31,7 +31,7 @@ class BloxData {
 }
 
 console.log(import.meta.env.VITE_API_BASE);
-export const articles = new BloxData(`${import.meta.env.VITE_API_BASE}/articles?_expand=category&_expand=profile`);
+export const articles = new BloxData(`${import.meta.env.VITE_API_BASE}/articles?_expand=category&_expand=profile&_expand=image`);
 export const websites = new BloxData(`${import.meta.env.VITE_API_BASE}/websites?_expand=profile`);
 export const pages = new BloxData(`${import.meta.env.VITE_API_BASE}/pages?_expand=image`);
 export const profiles = new BloxData(`${import.meta.env.VITE_API_BASE}/profiles?_expand=image`);
