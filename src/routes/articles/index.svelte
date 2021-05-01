@@ -5,7 +5,7 @@
   // see https://kit.svelte.dev/docs#loading
   export const load = async ({ fetch }) => {
     const aa = await articles.getAll();
-
+    console.log("load",aa)
     return {
       props: { articles: aa },
     };
@@ -14,6 +14,7 @@
 
 <script>
   export let articles;
+  console.log("page:",articles)
 </script>
 
 <svelte:head>
