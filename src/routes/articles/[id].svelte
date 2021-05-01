@@ -1,6 +1,6 @@
 <script context="module">
   import { articles } from "$lib/dataStore";
-
+  export const prerender = true;
   // see https://kit.svelte.dev/docs#loading
   export const load = async ({ fetch, page }) => {
     const article = await articles.getOne(page.params.id);
