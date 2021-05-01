@@ -41,7 +41,7 @@
 </script>
 
 <Container>
-<TopNav slot="header"  {navigation}></TopNav>
+<TopNav slot="header" {navigation}></TopNav>
 <slot></slot>
 <Footer slot="footer"></Footer>
 </Container>

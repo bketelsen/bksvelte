@@ -1,20 +1,31 @@
 <script context="module">
 
-  import { articles } from "$lib/dataStore";
+	// since there's no dynamic data here, we can prerender
+	// it so that it gets served as a static asset in prod
+
 
   // see https://kit.svelte.dev/docs#loading
   export const load = async ({ fetch }) => {
-    const aa = await articles.getAll();
-    console.log("load",aa)
-    return {
-      props: { articles: aa },
-    };
+    const res = await fetch("/articles.json")
+
+    if (res.ok) {
+			const articles  = await res.json();
+	
+			return {
+				props: { articles }
+			};
+		}
+	
+		const { message } = await res.json();
+	
+		return {
+			error: new Error(message)
+		};
   };
 </script>
 
 <script>
   export let articles;
-  console.log("page:",articles)
 </script>
 
 <svelte:head>
