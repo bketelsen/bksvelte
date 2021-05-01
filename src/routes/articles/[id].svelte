@@ -1,5 +1,5 @@
 <script context="module">
-  import { articles } from "$lib/dataStore";
+	export const prerender = true;
 
 
   // see https://kit.svelte.dev/docs#loading
