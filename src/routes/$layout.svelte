@@ -18,7 +18,10 @@
 	export let website;
 	export let categories;
 
-	import Container from '$lib/components/Container/index.svelte'	;
+	import Container from '$lib/components/Container/full.svelte'
+	import TopNav from '$lib/components/TopNav/search.svelte';
+	import Footer from '$lib/components/Footer/index.svelte';
+	import Header from '$lib/components/Sections/Headers/centered.svelte';
 
 	import "../app.postcss";
 
@@ -26,4 +29,7 @@
 
 <Container>
 
+<TopNav slot="header"></TopNav>
+<Header></Header>
+<Footer slot="footer"></Footer>
 </Container>
