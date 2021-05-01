@@ -1,8 +1,8 @@
 <script context="module">
-//	import {websites,categories}	 from '$lib/dataStore'
+	import {websites,categories}	 from '$lib/dataStore'
 
 	// see https://kit.svelte.dev/docs#loading
-	/*	
+	
 	export const load = async () => {
 
 		const website = await websites.getOne('brian.dev');
@@ -15,7 +15,7 @@
 			};
 
 	};
-	*/
+
 </script>
 
 <script>
