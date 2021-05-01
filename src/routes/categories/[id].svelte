@@ -1,13 +1,21 @@
 <script context="module">
-  import { categories } from "$lib/dataStore";
 
   // see https://kit.svelte.dev/docs#loading
   export const load = async ({ fetch, page }) => {
-    const cat = await categories.getOne(page.params.id);
-    return {
-      props: { category: cat },
-    };
-  };
+		const res = await fetch(`/categories/${page.params.id}.json`);
+    if (res.ok) {
+			const category = await res.json();
+			return {
+				props: { category }
+			};
+		}
+	
+		const { message } = await res.json();
+	
+		return {
+			error: new Error(message)
+		};
+	};;
 </script>
 
 <script>
