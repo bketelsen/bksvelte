@@ -13,6 +13,7 @@
   }
 
 	function current(path) {
+    console.log($page.path, path)
 		// index pages with one level
 		// including '/'
 		if ($page.path === path) {
