@@ -1,10 +1,11 @@
 <script>
-	import { page, navigating } from '$app/stores';
+
 	export let navigation;
+  export let page;
 
   let open = false;
  
-  $: console.log($navigating)
+
 
   function handleOpen(event){
     console.log("Open:", open)
