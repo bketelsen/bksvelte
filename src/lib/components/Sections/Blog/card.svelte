@@ -1,6 +1,6 @@
 <script>
     export let article;
-    $: imageSource = import.meta.env.VITE_API_BASE + "/" + article.image.file_name
+    $: imageSource = import.meta.env.VITE_ASSET_BASE + "/" + article.image.file_name
 </script>
 
 <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
