@@ -20,22 +20,12 @@
 </script>
 
 <script>
-  export let articles;
+	export let articles;
+	import Blog from '$lib/components/Sections/Blog/threecolumncard.svelte'
 </script>
 
 <svelte:head>
-  <title>Articles</title>
+	<title>Blog</title>
 </svelte:head>
 
-<div class="articles">
-  <h1>Articles</h1>
-  {#each articles as article (article.id)}
-    <div>
-      <h4><a href="/articles/{article.id}">{article.title}</a></h4>
-      <div>{article.excerpt}</div>
-    </div>
-  {/each}
-</div>
-
-<style>
-</style>
+<Blog {articles} title="Blog" heading="Articles" description="Musings from the Edge"></Blog>
