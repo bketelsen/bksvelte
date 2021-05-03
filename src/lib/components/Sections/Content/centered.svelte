@@ -1,4 +1,6 @@
 <script>
+    import SvelteMarkdown from 'svelte-markdown'
+
   export let article;
 </script>
 <div class="relative py-16 bg-white overflow-hidden">
@@ -39,7 +41,7 @@
         <p class="mt-8 text-xl text-gray-500 leading-8">{article.excerpt}</p>
       </div>
       <div class="mt-6 prose prose-indigo prose-lg text-gray-500 mx-auto">
-      {article.body}
+      <SvelteMarkdown source={article.body} />
       </div>
     </div>
   </div>

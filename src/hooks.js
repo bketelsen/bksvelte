@@ -40,19 +40,9 @@ export const handle = async ({ request, render }) => {
 
   
   export async function getSession() {
-	const article_pages = await Promise.all(
-        Object.entries(import.meta.glob('../data/articles/*.svx')).map(
-            async ([path, page]) => {
-                const { metadata } = await page();
-                const filename = path.split('/').pop();
-                return { ...metadata, filename };
-            }
-        )
-    );
-	const session = {
-	  article_data:  await articles.getAll(),
-	  article_pages: await article_pages,
 
+	const session = {
+	  articles:  await articles.getAll()
 	}
 	return session
   };
