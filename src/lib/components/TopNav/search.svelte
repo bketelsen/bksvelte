@@ -133,7 +133,7 @@
 				<a
 					href={item.route}
           sveltekit:prefetch
-					class="{item.route === $page.path?"bg-cyan-50 border-cyan-500 text-indigo-700":"border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800"}  block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+					class="{item.route === $page.path?"bg-cyan-50 border-cyan-500 text-cyan-700":"border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800"}  block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
 					>{item.name}</a
 				>
 			{/each}
