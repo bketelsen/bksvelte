@@ -10,8 +10,9 @@
 	export const load = async ({ fetch }) => {
 
 			const articles =  getArticles()
+			const featured = articles.filter((a)=>{return a.featured})
 			return {
-				props: { articles }
+				props: { articles: featured }
 			};
 
 	

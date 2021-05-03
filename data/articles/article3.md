@@ -3,7 +3,7 @@ title: Article Three
 category_id: kubernetes
 profile_id: bketelsen
 excerpt: Autem aliquam labore aspernatur accusantium harum facere.
-featured: true
+featured: false
 publish_date: "2021-03-19 15:00"
 last_edit_date: "2021-04-22"
 edit_description: Hello HN, thanks for stopping by!
