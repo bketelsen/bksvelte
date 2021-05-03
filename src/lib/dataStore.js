@@ -1,39 +1,54 @@
-class BloxData {
-  constructor(sourceURL) {
-    this.dataSource = sourceURL;
-  }
-  async _doInitialize() {
-    this.data = await (await fetch(this.dataSource)).json();
-  }
+import data from '../../data/.build/data.json';
 
-  async _initialize() {
-    // prevent concurrent calls firing initialization more than once
-    if (!this.initializationPromise) {
-      this.initializationPromise = this._doInitialize();
-    }
-    return this.initializationPromise;
+export const resolveArticle = (id) => {
+  const { articles } = data;
+  var doc = articles.find((a) => {
+    return a.id === id;
+  });
+
+  if (doc.category_id) {
+    const cat = resolveCategory(doc.category_id)
+    doc["category"] = cat
   }
-
-  async getOne(id) {
-    await this._initialize();
-
-    var item = this.data.find(a => {
-      return a.id === id
-    })
-
-    return item;
+  if (doc.profile_id) {
+    const prf = resolveProfile(doc.profile_id)
+    doc["profile"] = prf
   }
-  async getAll() {
-    await this._initialize();
-    return this.data;
+  if (doc.image_id) {
+    const img = resolveImage(doc.image_id)
+    doc["image"] = img
   }
-
+  return doc
 }
 
-export const articles = new BloxData(`${import.meta.env.VITE_API_BASE}/articles?_expand=category&_expand=profile&_expand=image`);
-export const websites = new BloxData(`${import.meta.env.VITE_API_BASE}/websites?_expand=profile`);
-export const pages = new BloxData(`${import.meta.env.VITE_API_BASE}/pages?_expand=image`);
-export const profiles = new BloxData(`${import.meta.env.VITE_API_BASE}/profiles?_expand=image`);
-export const categories = new BloxData(`${import.meta.env.VITE_API_BASE}/categories?_embed=articles`);
-export const sections = new BloxData(`${import.meta.env.VITE_API_BASE}/sections`);
-export const feeds = new BloxData(`${import.meta.env.VITE_API_BASE}/feeds?_embed=feeditems`);
+
+export const resolveProfile = (id) => {
+  const { profiles } = data;
+  var doc = profiles.find((a) => {
+    return a.id === id;
+  });
+  return doc
+}
+
+export const resolveCategory = (id) => {
+  const { categories } = data;
+  var doc = categories.find((a) => {
+    return a.id === id;
+  });
+  return doc
+}
+
+export const resolvePages = (id) => {
+  const { pages } = data;
+  var doc = pages.find((a) => {
+    return a.id === id;
+  });
+  return doc
+}
+export const resolveImage = (id) => {
+  const { images } = data;
+  var doc = images.find((a) => {
+    return a.id === id;
+  });
+  return doc
+}

@@ -1,5 +1,5 @@
-import {articles} from '$lib/dataStore';
 import cookie from 'cookie';
+import data from '../data/.build/data.json';
 import { v4 as uuid } from '@lukeed/uuid';
 
 export const getContext = (request) => {
@@ -35,14 +35,3 @@ export const handle = async ({ request, render }) => {
 
 	return response;
 };
-
-
-
-  
-  export async function getSession() {
-
-	const session = {
-	  articles:  await articles.getAll()
-	}
-	return session
-  };

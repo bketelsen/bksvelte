@@ -1,18 +1,20 @@
 <script context="module">
 	export const prerender = true;
+	import {resolveArticle} from '$lib/dataStore';
 
-	const slugRegex = /([a-z-]+)(?:\.svx)$/;
 
 	// see https://kit.svelte.dev/docs#loading
-	export const load = async ({ page, session }) => {
-		const articles = session.articles;
+	export const load = async ({ page }) => {
+
 		const { id } = page.params;
-		var doc = articles.find((a) => {
-			return a.id === id;
-		});
+
+		const doc = resolveArticle(id)
+		
+		console.log(doc)
             return {
                 props: {
 					article: doc,
+
                 },
             };
     }
@@ -20,6 +22,7 @@
 
 <script>
 	export let article;
+
 
 	import Content from '$lib/components/Sections/Content/centered.svelte';
 
@@ -31,5 +34,3 @@
 
 <Content {article} />
 
-<style>
-</style>
