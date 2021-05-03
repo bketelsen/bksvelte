@@ -1,3 +1,4 @@
+import {articles} from '$lib/dataStore';
 import cookie from 'cookie';
 import { v4 as uuid } from '@lukeed/uuid';
 
@@ -34,3 +35,24 @@ export const handle = async ({ request, render }) => {
 
 	return response;
 };
+
+
+
+  
+  export async function getSession() {
+	const article_pages = await Promise.all(
+        Object.entries(import.meta.glob('../data/articles/*.svx')).map(
+            async ([path, page]) => {
+                const { metadata } = await page();
+                const filename = path.split('/').pop();
+                return { ...metadata, filename };
+            }
+        )
+    );
+	const session = {
+	  article_data:  await articles.getAll(),
+	  article_pages: await article_pages,
+
+	}
+	return session
+  };
