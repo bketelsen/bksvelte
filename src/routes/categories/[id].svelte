@@ -1,22 +1,21 @@
 <script context="module">
+	export const prerender = true;
+	import {resolveCategory} from '$lib/dataStore';
 
-  // see https://kit.svelte.dev/docs#loading
-  export const load = async ({ fetch, page }) => {
-		const res = await fetch(`/categories/${page.params.id}.json`);
-    if (res.ok) {
-			const category = await res.json();
-			return {
-				props: { category }
-			};
-		}
-	
-		const { message } = await res.json();
-	
-		return {
-			error: new Error(message)
-		};
-	};;
+
+	// see https://kit.svelte.dev/docs#loading
+	export const load = async ({ page }) => {
+		const { id } = page.params;
+		const doc = resolveCategory(id)
+            return {
+                props: {
+					        category: doc,
+
+                },
+            };
+    }
 </script>
+
 
 <script>
   export let category;
@@ -32,12 +31,7 @@
   <div>
 
     <h3>Articles in {category.name}</h3>
-    {#each category.articles as article (article.id)}
-    <div>
-      <h4><a href="/articles/{article.id}">{article.title}</a></h4>
-      <div>{article.excerpt}</div>
-    </div>
-  {/each}
+
   </div>
 </div>
 

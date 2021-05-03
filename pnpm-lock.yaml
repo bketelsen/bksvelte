@@ -3,7 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@fontsource/fira-mono': ^4.2.2
   '@lukeed/uuid': ^2.0.0
-  '@sveltejs/adapter-vercel': next
+  '@sveltejs/adapter-static': next
   '@sveltejs/kit': next
   '@tailwindcss/aspect-ratio': ^0.2.0
   '@tailwindcss/forms': ^0.3.2
@@ -33,7 +33,7 @@ dependencies:
   svelte-markdown: 0.1.7_svelte@3.38.1
 
 devDependencies:
-  '@sveltejs/adapter-vercel': 1.0.0-next.15_svelte@3.38.1+vite@2.2.4
+  '@sveltejs/adapter-static': 1.0.0-next.7
   '@sveltejs/kit': 1.0.0-next.95_svelte@3.38.1+vite@2.2.4
   autoprefixer: 10.2.5_postcss@8.2.13
   cssnano: 5.0.2_postcss@8.2.13
@@ -121,34 +121,8 @@ packages:
       picomatch: 2.2.3
     dev: true
 
-  /@sveltejs/adapter-vercel/1.0.0-next.15_svelte@3.38.1+vite@2.2.4:
-    resolution: {integrity: sha512-Fb85t1fktFP46HZEjmlF/TN9k95grger27FpvsKaNXSz1VTdKS8Sbq3l5hROetkRIgXzAfOb8FlJyLVpz9Go1g==}
-    dependencies:
-      '@sveltejs/kit': 1.0.0-next.91_svelte@3.38.1+vite@2.2.4
-      esbuild: 0.11.18
-    transitivePeerDependencies:
-      - rollup
-      - supports-color
-      - svelte
-      - vite
-    dev: true
-
-  /@sveltejs/kit/1.0.0-next.91_svelte@3.38.1+vite@2.2.4:
-    resolution: {integrity: sha512-o2wjAnCMhpDNedyczQWwVQMRYRFhobTXQzBLpSentZXJjmImcdjI6InYXBe8wkilrpqHWxBqyc3VmbtBqXmxAA==}
-    engines: {node: '>= 12.17.0'}
-    hasBin: true
-    peerDependencies:
-      svelte: ^3.32.1
-      vite: ^2.2.3
-    dependencies:
-      '@sveltejs/vite-plugin-svelte': 1.0.0-next.9_svelte@3.38.1+vite@2.2.4
-      cheap-watch: 1.0.3
-      sade: 1.7.4
-      svelte: 3.38.1
-      vite: 2.2.4
-    transitivePeerDependencies:
-      - rollup
-      - supports-color
+  /@sveltejs/adapter-static/1.0.0-next.7:
+    resolution: {integrity: sha512-kIghJ2PoAPW6x8r5f+q8JTeB0EmBtl0Jl7wDB2HfsBCcdtNmdRqVgMcpfhSstpz1VGVDOuaU8rGlHL+XBAMMKQ==}
     dev: true
 
   /@sveltejs/kit/1.0.0-next.95_svelte@3.38.1+vite@2.2.4:
@@ -680,12 +654,6 @@ packages:
     resolution: {integrity: sha512-7dFHNmqeFSEt2ZBsCriorKnn3Z2pj+fd9kmI6QoWw4//DL+icEBfc0U7qJCisqrTsKTjw4fNFy2pW9OqStD84g==}
     dependencies:
       is-arrayish: 0.2.1
-    dev: true
-
-  /esbuild/0.11.18:
-    resolution: {integrity: sha512-KD7v4N9b5B8bxPUNn/3GA9r0HWo4nJk3iwjZ+2zG1ffg+r8ig+wqj7sW6zgI6Sn4/B2FnbzqWxcAokAGGM5zwQ==}
-    hasBin: true
-    requiresBuild: true
     dev: true
 
   /esbuild/0.9.7:

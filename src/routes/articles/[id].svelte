@@ -10,7 +10,6 @@
 
 		const doc = resolveArticle(id)
 		
-		console.log(doc)
             return {
                 props: {
 					article: doc,

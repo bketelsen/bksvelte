@@ -1,20 +1,21 @@
 <script context="module">
 
+	// since there's no dynamic data here, we can prerender
+	// it so that it gets served as a static asset in prod
+	export const prerender = true;
+	import {getCategories} from '$lib/dataStore';
+
+
   // see https://kit.svelte.dev/docs#loading
-  export const load = async ({ fetch }) => {
-		const res = await fetch('/categories.json');
-		if (res.ok) {
-			const categories = await res.json();
+	export const load = async ({ fetch }) => {
+
+			const categories =  getCategories()
 			return {
 				props: { categories }
 			};
-		}
+
 	
-		const { message } = await res.json();
-	
-		return {
-			error: new Error(message)
-		};
+
 	};
 </script>
 

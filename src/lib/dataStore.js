@@ -1,5 +1,23 @@
 import data from '../../data/.build/data.json';
 
+export const getArticles = () => {
+    const { articles } = data;
+    return articles
+}
+
+export const getCategories = () => {
+  const { categories } = data;
+  return categories
+}
+export const getProfiles = () => {
+  const { profiles } = data;
+  return profiles
+}
+export const getPages = () => {
+  const { pages } = data;
+  return pages
+}
+
 export const resolveArticle = (id) => {
   const { articles } = data;
   var doc = articles.find((a) => {
