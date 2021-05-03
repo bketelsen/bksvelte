@@ -1,5 +1,4 @@
 import cookie from 'cookie';
-import data from '../data/.build/data.json';
 import { v4 as uuid } from '@lukeed/uuid';
 
 export const getContext = (request) => {
