@@ -12,7 +12,7 @@
     </div>
     <div class="flex-1 bg-white p-6 flex flex-col justify-between">
         <div class="flex-1">
-            <p class="text-sm font-medium text-cyan-600">
+            <p class="text-sm font-medium text-cyan-800">
                 <a href="/categories/{article.category_id}" class="hover:underline"> {article.category && article.category.name} </a>
             </p>
             <a href="/articles/{article.id}" class="block mt-2">
