@@ -13,9 +13,6 @@ const config = {
 		// hydrate the <div id="svelte"> element in src/app.html
 		target: '#svelte',
 		adapter: adapter(),
-		files: {
-			assets: 'data/static',
-		},
 		prerender: {
             force: true,
         },

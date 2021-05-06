@@ -1,5 +1,5 @@
 <script>
-	import Card from './card.svelte';
+	import Card from './Card.svelte';
 	import {getArticle} from '$lib/dataStore'
     import Header from '$lib/containers/Header.svelte';
 	export let title;
