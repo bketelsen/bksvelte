@@ -1,5 +1,4 @@
 <script>
-import { fix_and_outro_and_destroy_block } from "svelte/internal";
 
     export let article;
 
