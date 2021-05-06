@@ -1,21 +1,19 @@
-
 <script context="module">
 	// since there's no dynamic data here, we can prerender
 	// it so that it gets served as a static asset in prod
 	export const prerender = true;
-	import {getArticles} from '$lib/dataStore';
+	import {getWebsite} from '$lib/dataStore';
 
   // see https://kit.svelte.dev/docs#loading
 	export const load = async ({ fetch }) => {
-
-			const articles =  getArticles()
-			const featured = articles.filter((a)=>{return a.featured})
+			const site =  getWebsite('brian.dev')
 			return {
-				props: { articles: featured }
+				props: { site: site }
 			};
 	};
 </script>
 <script>
+	export let site;
 	const navigation = [
 		{name:"Home", route:"/"},
 		{name:"Blog", route:"/articles"},
@@ -32,7 +30,7 @@
 </script>
 
 <Container>
-	<TopNav slot="header" {navigation} brand={"Brian Ketelsen"}></TopNav>
+	<TopNav slot="header" {navigation} brand={site.brand_name}></TopNav>
 	<slot></slot>
 	<Footer slot="footer"></Footer>
 </Container>
