@@ -18,10 +18,29 @@
 <script>
 	export let articles;
 	import ArticleList from '$lib/pages/ArticleList.svelte';
+	import SvelteSeo from "svelte-seo";
+
 </script>
 
 <svelte:head>
 	<title>Home</title>
 </svelte:head>
+
+<SvelteSeo
+  openGraph={{
+    title: 'Page Title',
+    description: 'Page Description',
+    url: 'https://www.example.com/page',
+    type: 'website',
+    images: [
+      {
+        url: 'https://www.example.com/images/og-image.jpg',
+        width: 850,
+        height: 650,
+        alt: 'Og Image Alt'
+      }
+     ]
+  }}
+/>
 
 <ArticleList {articles} title="latest" heading="Featured Articles" description="Here are some of the hottest articles on the blog"></ArticleList>
