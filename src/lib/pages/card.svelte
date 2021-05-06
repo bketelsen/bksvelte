@@ -6,7 +6,7 @@
     <div class="flex-shrink-0">
         <img
             class="h-48 w-full object-cover"
-            src="{article.image.file_name}"
+            src="/{article.image.file_name}"
             alt=""
         />
     </div>

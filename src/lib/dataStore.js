@@ -53,10 +53,12 @@ export const getProfile = (id) => {
 }
 
 export const getCategory = (id) => {
-  const { categories } = data;
+  const { categories, articles } = data;
   var doc = categories.find((a) => {
     return a.id === id;
   });
+  const catArticles = articles.filter(article => article.category_id === id)
+  doc["articles"] = catArticles;
   return doc
 }
 
