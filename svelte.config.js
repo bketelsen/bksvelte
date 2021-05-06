@@ -1,10 +1,8 @@
-const preprocess = require('svelte-preprocess');
-const static = require('@sveltejs/adapter-static');
+import adapter from '@sveltejs/adapter-static';
+import preprocess from 'svelte-preprocess';
 
 /** @type {import('@sveltejs/kit').Config} */
-module.exports = {
-	// Consult https://github.com/sveltejs/svelte-preprocess
-	// for more information about preprocessors
+const config = {
 	preprocess: [
 		preprocess({
 			postcss: true
@@ -14,7 +12,7 @@ module.exports = {
 	kit: {
 		// hydrate the <div id="svelte"> element in src/app.html
 		target: '#svelte',
-		adapter: static(),
+		adapter: adapter(),
 		files: {
 			assets: 'data/static',
 		},
@@ -24,3 +22,5 @@ module.exports = {
 
 	}
 };
+
+export default config;
