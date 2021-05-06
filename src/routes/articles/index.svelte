@@ -21,11 +21,12 @@
 
 <script>
 	export let articles;
-	import Blog from '$lib/components/Sections/Blog/threecolumncard.svelte'
+	import ArticleList from '$lib/pages/ArticleList.svelte';
+
 </script>
 
 <svelte:head>
 	<title>Blog</title>
 </svelte:head>
 
-<Blog {articles} title="Blog" heading="Articles" description="Musings from the Edge"></Blog>
+<ArticleList {articles} title="Blog" heading="Articles" description="Musings from the Edge"></ArticleList>

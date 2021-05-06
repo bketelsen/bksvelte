@@ -23,6 +23,13 @@ module.exports = {
 			colors: {
 				teal: colors.teal,
 				cyan: colors.cyan,
+				purple: colors.purple,
+				blue: colors.blue,
+				lime: colors.lime,
+				amber: colors.amber,
+				orange: colors.orange,
+				red: colors.red,
+				bluegray: colors.blueGray,
 			}
 		}
 	},

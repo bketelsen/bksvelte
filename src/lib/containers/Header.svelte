@@ -1,10 +1,7 @@
 <script>
-	import Card from './card.svelte';
-	import {getArticle} from '$lib/dataStore'
 	export let title;
 	export let heading;
 	export let description;
-	export let articles;
 </script>
 
 <div class="relative bg-gray-50 py-16 sm:py-24 lg:py-32">
@@ -18,12 +15,6 @@
 				{description}
 			</p>
 		</div>
-		<div
-			class="mt-12 mx-auto max-w-md px-4 grid gap-8 sm:max-w-lg sm:px-6 lg:px-8 lg:grid-cols-3 lg:max-w-7xl"
-		>
-			{#each articles as article (article.id)}
-				<Card article={getArticle(article.id)} />
-			{/each}
-		</div>
+        <slot />
 	</div>
 </div>

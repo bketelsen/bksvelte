@@ -1,19 +1,14 @@
 <script context="module">
 	export const prerender = true;
-	import {resolveArticle} from '$lib/dataStore';
-
+	import {getArticle} from '$lib/dataStore';
 
 	// see https://kit.svelte.dev/docs#loading
 	export const load = async ({ page }) => {
-
 		const { id } = page.params;
-
-		const doc = resolveArticle(id)
-		
+		const doc = getArticle(id)
             return {
                 props: {
 					article: doc,
-
                 },
             };
     }
@@ -23,7 +18,7 @@
 	export let article;
 
 
-	import Content from '$lib/components/Sections/Content/centered.svelte';
+	import Article from '$lib/pages/Article.svelte';
 
 </script>
 
@@ -31,5 +26,5 @@
 	<title>{article.title}</title>
 </svelte:head>
 
-<Content {article} />
+<Article {article} />
 

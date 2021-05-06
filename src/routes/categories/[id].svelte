@@ -1,12 +1,12 @@
 <script context="module">
 	export const prerender = true;
-	import {resolveCategory} from '$lib/dataStore';
+	import {getCategory} from '$lib/dataStore';
 
 
 	// see https://kit.svelte.dev/docs#loading
 	export const load = async ({ page }) => {
 		const { id } = page.params;
-		const doc = resolveCategory(id)
+		const doc = getCategory(id)
             return {
                 props: {
 					        category: doc,

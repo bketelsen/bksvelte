@@ -1,6 +1,7 @@
 <script>
 	export let categories;
 	export let title;
+	export let subtitle="";
 </script>
 
 <div class="relative bg-gray-50 py-16 sm:py-24 lg:py-32">
@@ -10,7 +11,7 @@
 			<p class="mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">
 				{title}
 			</p>
-			<p class="mt-5 mx-auto max-w-prose text-xl text-gray-500">Sub Title</p>
+			<p class="mt-5 mx-auto max-w-prose text-xl text-gray-500">{subtitle}</p>
 		</div>
 		<div class="mt-12 mx-auto max-w-lg px-4">
 			<ul class="mt-3 grid grid-cols-1 gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-2">

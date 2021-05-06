@@ -12,6 +12,7 @@
 
 		url:         string @template("https://google.com")
 		profile_id?: string
+		brand_name:  string @template("Your Name")
 		body?:       string
 	}
 }
