@@ -1,4 +1,6 @@
 <script>
+import { fix_and_outro_and_destroy_block } from "svelte/internal";
+
     export let article;
 
 </script>
@@ -6,7 +8,7 @@
 <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
     <div class="flex-shrink-0">
 
-        <img class="h-48 w-full object-cover" src='/{article.image.file_name}' />
+        <img class="h-48 w-full object-cover" src='/{article.image.file_name}' alt={article.title} width={article.image.width} height={article.image.height}/>
 
     </div>
     <div class="flex-1 bg-white p-6 flex flex-col justify-between">
