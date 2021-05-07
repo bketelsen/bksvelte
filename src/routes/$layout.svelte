@@ -26,6 +26,18 @@
 	import Footer from '$lib/footer/Footer.svelte';
 
 	import "../app.postcss";
+	const keepStylesPlease = [
+		'text-contrast-50',
+		'text-contrast-100',
+		'text-contrast-200',
+		'text-contrast-300',
+		'text-contrast-400',
+		'text-contrast-500',
+		'text-contrast-600',
+		'text-contrast-700',
+		'text-contrast-800',
+		'text-contrast-900',
+	]
 
 </script>
 
