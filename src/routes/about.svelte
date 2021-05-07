@@ -5,7 +5,6 @@
 	// see https://kit.svelte.dev/docs#loading
 	export const load = async () => {
 		const doc = getPage('about')
-		console.log(doc)
             return {
                 props: {
 					page: doc,
@@ -17,7 +16,7 @@
 <script>
 	export let page;
 	import SvelteMarkdown from 'svelte-markdown';
-	import { SplitPageWithImage } from 'components';
+	import { InsetImage } from 'components';
 
 
 
@@ -27,7 +26,7 @@
 	<title>{page.title}</title>
 </svelte:head>
 
-<SplitPageWithImage headline='Hi' title='{page.title}' lede='{page.excerpt}' imagealt="{page.title}" imagefilename='{page.image.file_name}'>
+<InsetImage headline='This is the Headline' caption="I'm a Caption" title='{page.title}' lede='{page.excerpt}' imagealt="{page.title}" image='{page.image}'>
 	<SvelteMarkdown source={page.body} />
 
-</SplitPageWithImage>
+</InsetImage>
