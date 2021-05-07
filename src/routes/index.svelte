@@ -26,7 +26,7 @@
 	<title>Home</title>
 </svelte:head>
 
-<SvelteSeo
+<SvelteSeo 
   openGraph={{
     title: 'Page Title',
     description: 'Page Description',

@@ -20,6 +20,7 @@ specifiers:
   svelte-preprocess: ^4.7.3
   svelte-seo: ^1.1.0
   tailwindcss: ^2.1.2
+  tailwindsvelte: bketelsen/tailwindsvelte
   tslib: ^2.2.0
   typescript: ^4.2.4
   vite: ^2.2.4
@@ -33,10 +34,11 @@ dependencies:
   cookie: 0.4.1
   svelte-markdown: 0.1.8_svelte@3.38.2
   svelte-seo: 1.1.0
+  tailwindsvelte: github.com/bketelsen/tailwindsvelte/5f3ddc4e531662083526ec46974f4c7feab3ddb5
 
 devDependencies:
   '@sveltejs/adapter-static': 1.0.0-next.8
-  '@sveltejs/kit': 1.0.0-next.100_svelte@3.38.2+vite@2.2.4
+  '@sveltejs/kit': 1.0.0-next.101_svelte@3.38.2+vite@2.2.4
   autoprefixer: 10.2.5_postcss@8.2.14
   cssnano: 5.0.2_postcss@8.2.14
   postcss: 8.2.14
@@ -127,8 +129,8 @@ packages:
     resolution: {integrity: sha512-goE3v68y+pn+fayPDJCCQ7W1QQpSMl86pZS9RvjuG64+TEI/PGsZwYR1RRgvwIiDqu33wBEHj+3ZYHEpJO/gwg==}
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.100_svelte@3.38.2+vite@2.2.4:
-    resolution: {integrity: sha512-r8G6bIlmIUiRS8JA5Hp+AASNWuuMTua64JP4i2fPTWSvqm/+F8+ZetXgtFy+RNabu5lU/Ua5YVEwBU6rgFVpDA==}
+  /@sveltejs/kit/1.0.0-next.101_svelte@3.38.2+vite@2.2.4:
+    resolution: {integrity: sha512-SwUImLhFmyaDsq7LKRJXPJRIOPa06SWENG7heko5FTRRLMpI/UDFcijjT2ln0Fp+AL9XfSbTHO8QrOflCMbfiQ==}
     engines: {node: '>= 12.17.0'}
     hasBin: true
     peerDependencies:
@@ -1863,3 +1865,8 @@ packages:
     resolution: {integrity: sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg==}
     engines: {node: '>= 6'}
     dev: true
+
+  github.com/bketelsen/tailwindsvelte/5f3ddc4e531662083526ec46974f4c7feab3ddb5:
+    resolution: {tarball: https://codeload.github.com/bketelsen/tailwindsvelte/tar.gz/5f3ddc4e531662083526ec46974f4c7feab3ddb5}
+    name: tailwindsvelte
+    dev: false
