@@ -16,12 +16,26 @@
 
 <script>
 export let categories;
-import CategoryList from '$lib/pages/CategoryList.svelte';
+import { SimpleCard, BodyWithHeader, SimpleCardGroup } from 'components';
 
+let title="Categories" 
+let heading="Category List"
+let description=""
 </script>
 
 <svelte:head>
   <title>Categories</title>
 </svelte:head>
 
-<CategoryList title="Categories" heading={"Category List"} description={""} {categories}></CategoryList>
+<BodyWithHeader {title} {heading} {description}>
+	<SimpleCardGroup>
+		{#each categories as category (category.id)}
+			<SimpleCard 
+				color={category.color}	
+				title={category.name}
+				description={category.description}
+				link="/categories/{category.id}"
+			/>
+		{/each}
+	</SimpleCardGroup>
+</BodyWithHeader>

@@ -16,8 +16,6 @@
 
 <script>
 	export let article;
-
-
 	import Article from '$lib/pages/Article.svelte';
 
 </script>
