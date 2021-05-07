@@ -91,7 +91,7 @@
 </script>
 
 <PageContainer>
-	<NavBar slot="header" {navigation} brand={site.brand_name}>
+	<NavBar slot="header" {navigation} >
 		<DesktopMenu slot="desktop" {navigation}>
 			<h2 slot="brand" class="text-contrast-700 text-2xl">Brian Ketelsen</h2>
 		</DesktopMenu>
