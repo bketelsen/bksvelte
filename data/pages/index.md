@@ -1,7 +1,7 @@
 ---
 title: Home
 excerpt: Autem aliquam labore aspernatur accusantium harum facere.
-publish_date: "2021-03-19"
+publish_date: '2021-03-19'
 tags:
   - one
   - two

@@ -4,15 +4,14 @@ category_id: kubernetes
 profile_id: bketelsen
 excerpt: Autem aliquam labore aspernatur accusantium harum facere.
 featured: true
-publish_date: "2021-03-19 15:00"
-last_edit_date: "2021-04-22"
+publish_date: '2021-03-19 15:00'
+last_edit_date: '2021-04-22'
 edit_description: Hello HN, thanks for stopping by!
 tags:
   - one
   - two
 image_id: athens
 ---
-
 
 Placeat consequuntur ullam aut sapiente illo velit. Eius facere ut molestias totam laborum pariatur quam. Praesentium quo veritatis expedita animi.
 

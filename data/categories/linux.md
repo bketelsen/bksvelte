@@ -1,5 +1,5 @@
 ---
-name: Linux 
+name: Linux
 description: Things about Linux
 color: red
 ---

@@ -6,7 +6,7 @@ const config = {
 	preprocess: [
 		preprocess({
 			postcss: true
-		}),
+		})
 	],
 
 	kit: {
@@ -14,10 +14,9 @@ const config = {
 		target: '#svelte',
 		adapter: adapter(),
 		prerender: {
-            force: true,
-        }
+			force: true
+		}
 	}
-
 };
 
 export default config;
