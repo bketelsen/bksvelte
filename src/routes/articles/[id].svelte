@@ -16,7 +16,10 @@
 
 <script>
 	export let article;
-	import Article from '$lib/pages/Article.svelte';
+	import SvelteMarkdown from 'svelte-markdown';
+	import { CenteredPage } from 'components';
+
+
 
 </script>
 
@@ -24,5 +27,6 @@
 	<title>{article.title}</title>
 </svelte:head>
 
-<Article {article} />
-
+<CenteredPage headline={article.category.name} title={article.title} lede={article.excerpt}>
+	<SvelteMarkdown source={article.body} />
+</CenteredPage>
