@@ -14,7 +14,12 @@
 </script>
 <script>
   export let category;
-  import ArticleList from '$lib/pages/ArticleList.svelte';
+  import { ArticleCard, BodyWithHeader, CardGroup } from 'components';
+	import { getArticle } from '$lib/dataStore'
+
+  let title="Category" 
+  $: heading=category.name
+  $: description=category.description
 
 </script>
 
@@ -22,4 +27,11 @@
   <title>{category.name}</title>
 </svelte:head>
 
-<ArticleList articles={category.articles} title="Category" heading="{category.name}" description="{category.description}"></ArticleList>
+
+<BodyWithHeader {title} {heading} {description}>
+	<CardGroup>
+		{#each category.articles as article (article.id)}
+			<ArticleCard article={getArticle(article.id)} />
+		{/each}
+	</CardGroup>
+</BodyWithHeader>

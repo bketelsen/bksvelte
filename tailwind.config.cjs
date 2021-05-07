@@ -22,7 +22,7 @@ module.exports = {
 		extend: {
 			colors: {
 				teal: colors.teal,
-				cyan: colors.cyan,
+				contrast: colors.cyan,
 				purple: colors.purple,
 				blue: colors.blue,
 				lime: colors.lime,
@@ -30,6 +30,8 @@ module.exports = {
 				orange: colors.orange,
 				red: colors.red,
 				bluegray: colors.blueGray,
+				main: colors.gray,
+				bg: colors.gray,
 			}
 		}
 	},

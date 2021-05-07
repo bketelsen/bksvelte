@@ -8,25 +8,29 @@
 
   // see https://kit.svelte.dev/docs#loading
 	export const load = async ({ fetch }) => {
-
 			const articles =  getArticles()
 			return {
 				props: { articles }
 			};
-
-	
-
 	};
 </script>
 
 <script>
+	import { ArticleCard, BodyWithHeader, CardGroup } from 'components';
+	import { getArticle } from '$lib/dataStore';
+	let title="Articles";
+	let heading="Blog Posts";
+	let description="News from the Edge";
 	export let articles;
-	import ArticleList from '$lib/pages/ArticleList.svelte';
-
 </script>
 
 <svelte:head>
 	<title>Blog</title>
 </svelte:head>
-
-<ArticleList {articles} title="Blog" heading="Articles" description="Musings from the Edge"></ArticleList>
+<BodyWithHeader {title} {heading} {description}>
+	<CardGroup>
+		{#each articles as article (article.id)}
+			<ArticleCard article={getArticle(article.id)} />
+		{/each}
+	</CardGroup>
+</BodyWithHeader>

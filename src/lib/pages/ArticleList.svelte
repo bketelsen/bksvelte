@@ -1,19 +1,16 @@
 <script>
-	import ArticleCard from 'components';
-	import {getArticle} from '$lib/dataStore'
-    import Header from '$lib/containers/Header.svelte';
+	import { ArticleCard, BodyWithHeader, CardGroup } from 'components';
+	import { getArticle } from '$lib/dataStore';
 	export let title;
 	export let heading;
 	export let description;
 	export let articles;
 </script>
 
-<Header {title} {heading} {description}>
-    <div
-class="mt-12 mx-auto max-w-md px-4 grid gap-8 sm:max-w-lg sm:px-6 lg:px-8 lg:grid-cols-3 lg:max-w-7xl"
->
-{#each articles as article (article.id)}
-    <ArticleCard article={getArticle(article.id)} />
-{/each}
-</div>
-</Header>
+<BodyWithHeader {title} {heading} {description}>
+	<CardGroup>
+		{#each articles as article (article.id)}
+			<ArticleCard article={getArticle(article.id)} />
+		{/each}
+	</CardGroup>
+</BodyWithHeader>

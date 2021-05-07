@@ -9,7 +9,7 @@ specifiers:
   '@tailwindcss/forms': ^0.3.2
   '@tailwindcss/typography': ^0.4.0
   autoprefixer: ^10.2.5
-  components: cueblox/components
+  components: github:cueblox/components
   cookie: ^0.4.1
   cssnano: ^5.0.2
   postcss: ^8.2.14
@@ -31,7 +31,6 @@ dependencies:
   '@tailwindcss/aspect-ratio': 0.2.0
   '@tailwindcss/forms': 0.3.2_tailwindcss@2.1.2
   '@tailwindcss/typography': 0.4.0_tailwindcss@2.1.2
-  components: github.com/cueblox/components/991e82d2240b18cb233ea71a8f0af2a6e08a392e
   cookie: 0.4.1
   svelte-markdown: 0.1.8_svelte@3.38.2
   svelte-seo: 1.1.0
@@ -40,6 +39,7 @@ devDependencies:
   '@sveltejs/adapter-static': 1.0.0-next.8
   '@sveltejs/kit': 1.0.0-next.101_svelte@3.38.2+vite@2.2.4
   autoprefixer: 10.2.5_postcss@8.2.14
+  components: github.com/cueblox/components/40cfcd9bdd634810af56d6a4c42c4d153c853341
   cssnano: 5.0.2_postcss@8.2.14
   postcss: 8.2.14
   postcss-load-config: 3.0.1
@@ -1866,9 +1866,9 @@ packages:
     engines: {node: '>= 6'}
     dev: true
 
-  github.com/cueblox/components/991e82d2240b18cb233ea71a8f0af2a6e08a392e:
-    resolution: {tarball: https://codeload.github.com/cueblox/components/tar.gz/991e82d2240b18cb233ea71a8f0af2a6e08a392e}
+  github.com/cueblox/components/40cfcd9bdd634810af56d6a4c42c4d153c853341:
+    resolution: {tarball: https://codeload.github.com/cueblox/components/tar.gz/40cfcd9bdd634810af56d6a4c42c4d153c853341}
     name: components
     prepare: true
     requiresBuild: true
-    dev: false
+    dev: true

@@ -25,6 +25,3 @@ import CategoryList from '$lib/pages/CategoryList.svelte';
 </svelte:head>
 
 <CategoryList title="Categories" heading={"Category List"} description={""} {categories}></CategoryList>
-
-<style>
-</style>

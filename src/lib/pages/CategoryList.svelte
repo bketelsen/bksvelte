@@ -1,6 +1,6 @@
 <script>
 	export let categories;
-	import Header from '$lib/containers/Header.svelte';
+	import { BodyWithHeader} from 'components';
 	export let title;
 	export let heading;
 	export let description;
@@ -26,7 +26,7 @@
 	}
 </script>
 
-<Header {title} {heading} {description}>
+<BodyWithHeader {title} {heading} {description}>
 	<div class="mt-12 mx-auto max-w-lg px-4">
 		<ul class="mt-3 grid grid-cols-1 gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-2">
 			{#each categories as category (category.id)}
@@ -50,4 +50,4 @@
 			{/each}
 		</ul>
 	</div>
-</Header>
+</BodyWithHeader>

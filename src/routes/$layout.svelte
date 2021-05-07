@@ -21,7 +21,7 @@
 		{name:"About", route:"/about"},
 
 	]
-	import Container from '$lib/containers/Page.svelte'
+	import { PageContainer } from 'components'
 	import TopNav from '$lib/nav/TopNav.svelte';
 	import Footer from '$lib/footer/Footer.svelte';
 
@@ -29,8 +29,8 @@
 
 </script>
 
-<Container>
+<PageContainer>
 	<TopNav slot="header" {navigation} brand={site.brand_name}></TopNav>
 	<slot></slot>
 	<Footer slot="footer"></Footer>
-</Container>
+</PageContainer>

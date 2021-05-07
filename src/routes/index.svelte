@@ -17,9 +17,12 @@
 
 <script>
 	export let articles;
-	import ArticleList from '$lib/pages/ArticleList.svelte';
 	import SvelteSeo from "svelte-seo";
-
+  let title="latest" 
+  let heading="Featured Articles" 
+  let description="Here are some of the hottest articles on the blog"
+  import { ArticleCard, BodyWithHeader, CardGroup } from 'components';
+	import { getArticle } from '$lib/dataStore';
 </script>
 
 <svelte:head>
@@ -43,4 +46,10 @@
   }}
 />
 
-<ArticleList {articles} title="latest" heading="Featured Articles" description="Here are some of the hottest articles on the blog"></ArticleList>
+<BodyWithHeader {title} {heading} {description}>
+	<CardGroup>
+		{#each articles as article (article.id)}
+			<ArticleCard article={getArticle(article.id)} />
+		{/each}
+	</CardGroup>
+</BodyWithHeader>

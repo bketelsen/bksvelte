@@ -15,9 +15,9 @@ const config = {
 		adapter: adapter(),
 		prerender: {
             force: true,
-        },
-
+        }
 	}
+
 };
 
 export default config;
