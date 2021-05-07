@@ -23,6 +23,12 @@
 	import { PageContainer, NavBar, DesktopMenu, MobileMenu } from 'components'
 	import Footer from '$lib/footer/Footer.svelte';
 
+	let open = false;
+
+	function toggleOpen(event) {
+		open = !open;
+	}
+
 	import "../app.postcss";
 	const keepStylesPlease = [
 		'text-contrast-50',
@@ -92,10 +98,12 @@
 
 <PageContainer>
 	<NavBar slot="header" {navigation} >
-		<DesktopMenu slot="desktop" {navigation}>
+		<DesktopMenu slot="desktop" {navigation}
+			on:toggleopen={toggleOpen}	
+			>
 			<h2 slot="brand" class="text-contrast-700 text-2xl">Brian Ketelsen</h2>
 		</DesktopMenu>
-		<MobileMenu slot="mobile" {navigation}></MobileMenu>
+		<MobileMenu  {open} slot="mobile" {navigation}></MobileMenu>
 	</NavBar>
 	<slot></slot>
 	<Footer slot="footer"></Footer>

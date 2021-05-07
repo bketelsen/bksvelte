@@ -39,7 +39,7 @@ devDependencies:
   '@sveltejs/adapter-static': 1.0.0-next.9
   '@sveltejs/kit': 1.0.0-next.102_svelte@3.38.2
   autoprefixer: 10.2.5_postcss@8.2.14
-  components: github.com/cueblox/components/f045d18b220015083d5857e59157ff50a255ff97
+  components: github.com/cueblox/components/b95fed8756546e82b4e21db45ad2a32c8fab378e
   cssnano: 5.0.2_postcss@8.2.14
   postcss: 8.2.14
   postcss-load-config: 3.0.1
@@ -1666,6 +1666,10 @@ packages:
       has-flag: 4.0.0
     dev: true
 
+  /svelte-click-outside/1.0.0:
+    resolution: {integrity: sha512-TVDn5Vd8L0WI0Y9BFh/2I7judkIqYCbFKkGwGl/f8D0inwBFNyU0weKhrbJY4VQtYnWriq0NPl+mIYGisgALbw==}
+    dev: true
+
   /svelte-hmr/0.14.3_svelte@3.38.2:
     resolution: {integrity: sha512-N56xX405zLMw2tpGHKRx5h+kmdeZwxI21pvyC6OyBHJDCF6DlwWBm9TifdQmSD4dloWSmpDPzHWYa3CSjfopUg==}
     peerDependencies:
@@ -1865,9 +1869,11 @@ packages:
     engines: {node: '>= 6'}
     dev: true
 
-  github.com/cueblox/components/f045d18b220015083d5857e59157ff50a255ff97:
-    resolution: {tarball: https://codeload.github.com/cueblox/components/tar.gz/f045d18b220015083d5857e59157ff50a255ff97}
+  github.com/cueblox/components/b95fed8756546e82b4e21db45ad2a32c8fab378e:
+    resolution: {tarball: https://codeload.github.com/cueblox/components/tar.gz/b95fed8756546e82b4e21db45ad2a32c8fab378e}
     name: components
     prepare: true
     requiresBuild: true
+    dependencies:
+      svelte-click-outside: 1.0.0
     dev: true
