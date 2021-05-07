@@ -1,39 +1,33 @@
 <script context="module">
-	import { browser, dev } from '$app/env';
-	
-	// we don't need any JS on this page, though we'll load
-	// it in dev so that we get hot module replacement...
-	export const hydrate = dev;
-	
-	// ...but if the client-side router is already loaded
-	// (i.e. we came here from elsewhere in the app), use it
-	export const router = browser;
-	
-	// since there's no dynamic data here, we can prerender
-	// it so that it gets served as a static asset in prod
 	export const prerender = true;
+	import {getPage} from '$lib/dataStore';
+
+	// see https://kit.svelte.dev/docs#loading
+	export const load = async () => {
+		const doc = getPage('about')
+		console.log(doc)
+            return {
+                props: {
+					page: doc,
+                },
+            };
+    }
+</script>
+
+<script>
+	export let page;
+	import SvelteMarkdown from 'svelte-markdown';
+	import { SplitPageWithImage } from 'components';
+
+
+
 </script>
 
 <svelte:head>
-	<title>About</title>
+	<title>{page.title}</title>
 </svelte:head>
 
-<div class="content">
-	<h1>About this app</h1>
+<SplitPageWithImage headline='Hi' title='{page.title}' lede='{page.excerpt}' imagealt="{page.title}" imagefilename='{page.image.file_name}'>
+	<SvelteMarkdown source={page.body} />
 
-	<p>
-		This is a <a href="https://kit.svelte.dev">SvelteKit</a> app. You can make your own by typing the
-		following into your command line and following the prompts:
-	</p>
-
-	<!-- TODO lose the @next! -->
-	<pre>npm init svelte@next</pre>
-
-	<p>
-		The page you're looking at is purely static HTML, with no client-side interactivity needed.
-		Because of that, we don't need to load any JavaScript. Try viewing the page's source, or opening
-		the devtools network panel and reloading.
-	</p>
-
-</div>
-
+</SplitPageWithImage>

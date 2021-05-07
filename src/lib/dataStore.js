@@ -61,18 +61,24 @@ export const getCategory = (id) => {
 	return doc;
 };
 
-export const getPage = (id) => {
-	const { pages } = data;
-	var doc = pages.find((a) => {
-		return a.id === id;
-	});
-	return doc;
-};
+
 export const getImage = (id) => {
 	const { images } = data;
 	var doc = images.find((a) => {
 		return a.id === id;
 	});
+	return doc;
+};
+export const getPage = (id) => {
+	const { pages } = data;
+	var doc = pages.find((a) => {
+		return a.id === id;
+	});
+	if (doc.image_id) {
+		const img = getImage(doc.image_id);
+		doc['image'] = img;
+	}
+	
 	return doc;
 };
 export const getWebsite = (id) => {
