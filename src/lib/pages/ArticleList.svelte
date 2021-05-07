@@ -1,5 +1,5 @@
 <script>
-	import ArticleCard from 'tailwindsvelte';
+	import ArticleCard from 'components';
 	import {getArticle} from '$lib/dataStore'
     import Header from '$lib/containers/Header.svelte';
 	export let title;
