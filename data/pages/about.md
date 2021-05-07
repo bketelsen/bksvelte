@@ -1,6 +1,6 @@
 ---
 title: About
-excerpt: Autem aliquam labore aspernatur accusantium harum facere.
+excerpt: I'm the lede.  The point of this whole page, if you really think about it.
 publish_date: '2021-03-19'
 tags:
   - one
