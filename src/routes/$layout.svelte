@@ -19,10 +19,8 @@
 		{name:"Blog", route:"/articles"},
 		{name:"Categories", route:"/categories"},
 		{name:"About", route:"/about"},
-
 	]
 	import { PageContainer, NavBar, DesktopMenu, MobileMenu } from 'components'
-	import TopNav from '$lib/nav/TopNav.svelte';
 	import Footer from '$lib/footer/Footer.svelte';
 
 	import "../app.postcss";
@@ -57,6 +55,26 @@
 		'border-bg-700',
 		'border-bg-800',
 		'border-bg-900',
+		'border-contrast-50',
+		'border-contrast-100',
+		'border-contrast-200',
+		'border-contrast-300',
+		'border-contrast-400',
+		'border-contrast-500',
+		'border-contrast-600',
+		'border-contrast-700',
+		'border-contrast-800',
+		'border-contrast-900',
+		'border-main-50',
+		'border-main-100',
+		'border-main-200',
+		'border-main-300',
+		'border-main-400',
+		'border-main-500',
+		'border-main-600',
+		'border-main-700',
+		'border-main-800',
+		'border-main-900',
 		'bg-bg-50',
 		'bg-bg-100',
 		'bg-bg-200',
