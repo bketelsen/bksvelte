@@ -21,7 +21,7 @@
 		{name:"About", route:"/about"},
 
 	]
-	import { PageContainer } from 'components'
+	import { PageContainer, NavBar, DesktopMenu, MobileMenu } from 'components'
 	import TopNav from '$lib/nav/TopNav.svelte';
 	import Footer from '$lib/footer/Footer.svelte';
 
@@ -73,7 +73,12 @@
 </script>
 
 <PageContainer>
-	<TopNav slot="header" {navigation} brand={site.brand_name}></TopNav>
+	<NavBar slot="header" {navigation} brand={site.brand_name}>
+		<DesktopMenu slot="desktop" {navigation}>
+			<h2 slot="brand" class="text-contrast-700 text-2xl">Brian Ketelsen</h2>
+		</DesktopMenu>
+		<MobileMenu slot="mobile" {navigation}></MobileMenu>
+	</NavBar>
 	<slot></slot>
 	<Footer slot="footer"></Footer>
 </PageContainer>

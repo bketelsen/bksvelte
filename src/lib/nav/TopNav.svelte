@@ -18,11 +18,8 @@
 			<div class="flex px-2 lg:px-0">
 				<div class="flex-shrink-0 flex inline-flex items-center px-1 pt-1z text-sm font-medium">
 					<h2>{brand}</h2>
-
 				</div>
 				<div class="hidden lg:ml-6 lg:flex lg:space-x-8">
-					<!-- Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" -->
-
 					{#each navigation as item}
 						<a
 							href={item.route}
@@ -76,13 +73,6 @@
           			on:click={handleOpen}
 				>
 					<span class="sr-only">Open main menu</span>
-					<!--
-              Icon when menu is closed.
-  
-              Heroicon name: outline/menu
-  
-              Menu open: "hidden", Menu closed: "block"
-            -->
 					<svg
 						class="block h-6 w-6"
 						xmlns="http://www.w3.org/2000/svg"
@@ -98,13 +88,6 @@
 							d="M4 6h16M4 12h16M4 18h16"
 						/>
 					</svg>
-					<!--
-              Icon when menu is open.
-  
-              Heroicon name: outline/x
-  
-              Menu open: "block", Menu closed: "hidden"
-            -->
 					<svg
 						class="hidden h-6 w-6"
 						xmlns="http://www.w3.org/2000/svg"
@@ -133,7 +116,7 @@
 			{#each navigation as item}
 				<a
 					href={item.route}
-          sveltekit:prefetch
+          			sveltekit:prefetch
 					class="{item.route === $page.path?"bg-cyan-50 border-cyan-500 text-cyan-700":"border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800"}  block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
 					>{item.name}</a
 				>
