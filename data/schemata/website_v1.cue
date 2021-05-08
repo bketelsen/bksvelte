@@ -19,6 +19,6 @@
 	}
 		#NavigationItem: {
 			name: 	  string @template("About")
-			link:     string @template("/about")
+			route:     string @template("/about")
 		}
 }

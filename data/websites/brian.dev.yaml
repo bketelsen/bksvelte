@@ -3,15 +3,17 @@ profile_id: bketelsen
 brand_name: 'Brian Ketelsen'
 primary_navigation:
   - name: Home
-    link: '/'
+    route: '/'
   - name: Blog
-    link: '/articles'
+    route: '/articles'
   - name: Categories
-    link: '/categories'
+    route: '/categories'
+  - name: About
+    route: '/about'
 secondary_navigation:
   - name: Home
-    link: '/'
+    route: '/'
   - name: Alt Blog
-    link: '/altarticles'
+    route: '/altarticles'
   - name: Categories
-    link: '/categories'
+    route: '/categories'

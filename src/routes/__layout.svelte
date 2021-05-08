@@ -103,13 +103,13 @@
 
 <PageContainer>
 	<NavBar slot="header"  >
-		<DesktopMenu slot="desktop" navigation={topNavigation}
+		<DesktopMenu slot="desktop" navigation={site.primary_navigation}
 			on:toggleopen={toggleOpen}	
 			>
 			<h2 slot="brand" class="text-contrast-700 text-2xl">Brian Ketelsen</h2>
 		</DesktopMenu>
-		<MobileMenu  {open} slot="mobile" navigation={topNavigation}></MobileMenu>
+		<MobileMenu  {open} slot="mobile" navigation={site.primary_navigation}></MobileMenu>
 	</NavBar>
 	<slot></slot>
-	<SimpleCentered slot="footer" navigation={bottomNav}/>
+	<SimpleCentered slot="footer" navigation={site.secondary_navigation}/>
 </PageContainer>
