@@ -20,3 +20,11 @@ Quite anything glass benefit. Such form clearly top tend can require my. Federal
 Ut dignissimos sapiente culpa rerum pariatur consequatur. Corporis suscipit ad corrupti aut. Expedita culpa aut deleniti officiis.
 
 Porro eum id sit quia expedita. Alias expedita asperiores. Corporis ex eum atque cum ea. change
+
+```go
+type BloxImage struct {
+	FileName string `yaml:"file_name"`
+	Height   int    `yaml:"height"`
+	Width    int    `yaml:"width"`
+}
+```

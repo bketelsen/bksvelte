@@ -12,10 +12,12 @@ specifiers:
   components: github:cueblox/components
   cookie: ^0.4.1
   cssnano: ^5.0.2
+  highlight.js: ^10.7.2
   postcss: ^8.2.14
   postcss-load-config: ^3.0.1
   prettier: ~2.2.1
   prettier-plugin-svelte: ^2.2.0
+  remarkable: ^2.0.1
   svelte: ^3.38.2
   svelte-markdown: ^0.1.8
   svelte-preprocess: ^4.7.3
@@ -41,10 +43,12 @@ devDependencies:
   autoprefixer: 10.2.5_postcss@8.2.14
   components: github.com/cueblox/components/64bf3bb1877484baafa26e97de0fdfc5e6ea7645
   cssnano: 5.0.2_postcss@8.2.14
+  highlight.js: 10.7.2
   postcss: 8.2.14
   postcss-load-config: 3.0.1
   prettier: 2.2.1
   prettier-plugin-svelte: 2.2.0_prettier@2.2.1+svelte@3.38.2
+  remarkable: 2.0.1
   svelte: 3.38.2
   svelte-preprocess: 4.7.3_bc60392b3f6116f56fa9e4496adda117
   tailwindcss: 2.1.2_b46308bb95614802e1b6d1dce4e25ea6
@@ -261,9 +265,21 @@ packages:
       picomatch: 2.2.3
     dev: true
 
+  /argparse/1.0.10:
+    resolution: {integrity: sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg==}
+    dependencies:
+      sprintf-js: 1.0.3
+    dev: true
+
   /at-least-node/1.0.0:
     resolution: {integrity: sha512-+q/t7Ekv1EDY2l6Gda6LLiX14rU9TV20Wa3ofeQmwPFZbOMo9DXrLbOjFaaclkXKWidIaopwAObQDqwWtGUjqg==}
     engines: {node: '>= 4.0.0'}
+    dev: true
+
+  /autolinker/3.14.3:
+    resolution: {integrity: sha512-t81i2bCpS+s+5FIhatoww9DmpjhbdiimuU9ATEuLxtZMQ7jLv9fyFn7SWNG8IkEfD4AmYyirL1ss9k1aqVWRvg==}
+    dependencies:
+      tslib: 1.14.1
     dev: true
 
   /autoprefixer/10.2.5_postcss@8.2.14:
@@ -792,6 +808,10 @@ packages:
 
   /hex-color-regex/1.1.0:
     resolution: {integrity: sha512-l9sfDFsuqtOqKDsQdqrMRk0U85RZc0RtOR9yPI7mRVOa4FsR/BVnZ0shmQRM96Ji99kYZP/7hn1cedc1+ApsTQ==}
+    dev: true
+
+  /highlight.js/10.7.2:
+    resolution: {integrity: sha512-oFLl873u4usRM9K63j4ME9u3etNF0PLiJhSQ8rdfuL51Wn3zkD6drf9ZW0dOzjnZI22YYG24z30JcmfCZjMgYg==}
     dev: true
 
   /hsl-regex/1.0.0:
@@ -1554,6 +1574,15 @@ packages:
       postcss-value-parser: 3.3.1
     dev: true
 
+  /remarkable/2.0.1:
+    resolution: {integrity: sha512-YJyMcOH5lrR+kZdmB0aJJ4+93bEojRZ1HGDn9Eagu6ibg7aVZhc3OWbbShRid+Q5eAfsEqWxpe+g5W5nYNfNiA==}
+    engines: {node: '>= 6.0.0'}
+    hasBin: true
+    dependencies:
+      argparse: 1.0.10
+      autolinker: 3.14.3
+    dev: true
+
   /require-relative/0.8.7:
     resolution: {integrity: sha1-eZlTn8ngR6N5KPoZb44VY9q9Nt4=}
     dev: true
@@ -1628,6 +1657,10 @@ packages:
   /source-map/0.7.3:
     resolution: {integrity: sha512-CkCj6giN3S+n9qrYiBTX5gystlENnRW5jZeNLHpe6aue+SrHcG5VYwujhW9s4dY31mEGsxBDrHR6oI69fTXsaQ==}
     engines: {node: '>= 8'}
+    dev: true
+
+  /sprintf-js/1.0.3:
+    resolution: {integrity: sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=}
     dev: true
 
   /stable/0.1.8:
@@ -1809,6 +1842,10 @@ packages:
     engines: {node: '>=8.0'}
     dependencies:
       is-number: 7.0.0
+    dev: true
+
+  /tslib/1.14.1:
+    resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
     dev: true
 
   /tslib/2.2.0:
