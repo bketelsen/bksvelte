@@ -4,7 +4,10 @@ const colors = require('tailwindcss/colors');
 module.exports = {
 	mode: 'aot',
 	purge: {
-		content: ['./src/**/*.{html,js,svelte,ts}'],
+		content: [
+			'./src/**/*.{html,js,svelte,ts}',
+			'./node_modules/components/**/*.{html,js,svelte,ts}',
+		],
 		options: {
 			defaultExtractor: (content) => [
 				// If this stops working, please open an issue at https://github.com/svelte-add/tailwindcss/issues rather than bothering Tailwind Labs about it

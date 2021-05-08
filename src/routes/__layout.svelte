@@ -28,7 +28,7 @@
 	these are here because tailwind scans the source looking for style names to keep
 	when it prunes the css for production usage.
 	*/
-	const keepStylesPlease = [
+	/* const keepStylesPlease = [
 		'text-contrast-50',
 		'text-contrast-100',
 		'text-contrast-200',
@@ -98,6 +98,7 @@
 		'bg-bluegray-600',
 		'prose-contrast',
 	]
+	*/
 
 </script>
 
