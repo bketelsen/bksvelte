@@ -1,7 +1,7 @@
 ---
 name: Kubernetes
 description: Kubes
-color: blue
+color: teal
 image_id: athens
 ---
 
