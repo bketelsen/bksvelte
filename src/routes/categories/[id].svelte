@@ -31,7 +31,7 @@
 <BodyWithHeader {title} {heading} {description}>
 	<CardGroup>
 		{#each category.articles as article (article.id)}
-			<ArticleCard article={getArticle(article.id)} />
+			<ArticleCard article={article} />
 		{/each}
 	</CardGroup>
 </BodyWithHeader>

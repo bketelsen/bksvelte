@@ -17,7 +17,6 @@
 
 <script>
 	import { ArticleCard, BodyWithHeader, CardGroup } from 'components';
-	import { getArticle } from '$lib/dataStore';
 	let title="Articles";
 	let heading="Blog Posts";
 	let description="News from the Edge";
@@ -30,7 +29,7 @@
 <BodyWithHeader {title} {heading} {description}>
 	<CardGroup>
 		{#each articles as article (article.id)}
-			<ArticleCard article={getArticle(article.id)} />
+			<ArticleCard article={article} />
 		{/each}
 	</CardGroup>
 </BodyWithHeader>

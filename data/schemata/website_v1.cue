@@ -14,5 +14,11 @@
 		profile_id?: string
 		brand_name:  string @template("Your Name")
 		body?:       string
+		primary_navigation?: [...#NavigationItem]
+		secondary_navigation?: [...#NavigationItem]
 	}
+		#NavigationItem: {
+			name: 	  string @template("About")
+			link:     string @template("/about")
+		}
 }

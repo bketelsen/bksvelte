@@ -1,31 +1,5 @@
 import data from '../../data/.build/data.json';
 
-export const getArticles = () => {
-	const { articles } = data;
-	return articles;
-};
-
-export const getCategories = () => {
-	const { categories } = data;
-	return categories;
-};
-export const getProfiles = () => {
-	const { profiles } = data;
-	return profiles;
-};
-export const getPages = () => {
-	const { pages } = data;
-	return pages;
-};
-export const getWebsites = () => {
-	const { websites } = data;
-	return websites;
-};
-export const getSections = () => {
-	const { sections } = data;
-	return sections;
-};
-
 export const getImage = (id) => {
 	const { images } = data;
 	var doc = images.find((a) => {
@@ -91,8 +65,6 @@ export const getCategory = (id) => {
 	return doc;
 };
 
-
-
 export const getPage = (id) => {
 	const { pages } = data;
 	var doc = pages.find((a) => {
@@ -105,6 +77,7 @@ export const getPage = (id) => {
 	
 	return doc;
 };
+
 export const getWebsite = (id) => {
 	const { websites } = data;
 	var doc = websites.find((a) => {
@@ -115,4 +88,57 @@ export const getWebsite = (id) => {
 		doc['profile'] = prf;
 	}
 	return doc;
+};
+const { articles } = data;
+const fatArticles = articles.map(a => {
+	return getArticle(a.id)
+})
+
+const { categories } = data;
+const fatCategories = categories.map(c => {
+	return getCategory(c.id)
+})
+
+const { profiles } = data;
+const fatProfiles = profiles.map(p => {
+	return getProfile(p.id)
+})
+
+const { pages } = data;
+const fatPages = pages.map(p => {
+	return getPage(p.id)
+})
+
+const { websites } = data;
+const fatWebsites = websites.map(w => {
+	return getWebsite(w.id)
+})
+
+const { sections } = data;
+const fatSections = sections.map(s => {
+	return getSection(s.id)
+})
+
+export const getArticles = () => {
+	return fatArticles;
+};
+
+export const getCategories = () => {
+	return fatCategories;
+};
+
+export const getProfiles = () => {
+	return fatProfiles;
+};
+
+export const getPages = () => {
+	return fatPages;
+};
+
+export const getWebsites = () => {
+	return fatWebsites;
+};
+
+export const getSections = () => {
+	return fatSections;
 };

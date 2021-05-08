@@ -32,10 +32,10 @@
 	<BorderlessCardGroup slot="cardgroup">
 		{#each articles as article (article.id)}
 			<BorderlessCard 
-			article={getArticle(article.id)} 
-			category={getCategory(article.category_id)}
-			profile={getProfile(article.profile_id)}
-			avatar={getImage('athens')}/>
+			article={article} 
+			category={article.category}
+			profile={article.profile}
+			avatar={article.image}/>
 		{/each}
 	</BorderlessCardGroup>
 </BodyWithoutHeader>
