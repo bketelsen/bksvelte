@@ -15,7 +15,6 @@
 <script>
   export let category;
   import { ArticleCard, BodyWithHeader, CardGroup } from 'components';
-	import { getArticle } from '$lib/dataStore'
 
   let title="Category" 
   $: heading=category.name

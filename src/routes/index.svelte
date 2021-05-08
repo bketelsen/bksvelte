@@ -23,7 +23,6 @@
 	let heading = 'Featured Articles';
 	let description = 'Here are some of the hottest articles on the blog';
 	import { ArticleCard, BodyWithHeader, CardGroup } from 'components';
-	import { getArticle } from '$lib/dataStore';
 </script>
 
 <svelte:head>

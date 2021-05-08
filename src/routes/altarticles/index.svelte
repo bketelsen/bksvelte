@@ -17,7 +17,6 @@
 
 <script>
 	import { BorderlessCard, BorderlessCardGroup, BodyWithoutHeader, SimpleHeader, SimpleCardGroup } from 'components';
-	import { getArticle, getCategory, getImage, getProfile } from '$lib/dataStore';
 	let title="Articles";
 	let heading="Blog Posts";
 	let description="News from the Edge";
