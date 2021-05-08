@@ -14,14 +14,19 @@
 </script>
 <script>
 	export let site;
-	const navigation = [
+	const topNavigation = [
 		{name:"Home", route:"/"},
 		{name:"Blog", route:"/articles"},
 		{name:"Categories", route:"/categories"},
 		{name:"About", route:"/about"},
 	]
-	import { PageContainer, NavBar, DesktopMenu, MobileMenu } from 'components'
-	import Footer from '$lib/footer/Footer.svelte';
+	const bottomNav = [
+		{name:"Home", route:"/"},
+		{name:"ALT Blog", route:"/altarticles"},
+		{name:"Categories", route:"/categories"},
+		{name:"About", route:"/about"},
+	]
+	import { PageContainer, NavBar, DesktopMenu, MobileMenu, SimpleCentered } from 'components'
 
 	let open = false;
 
@@ -97,14 +102,14 @@
 </script>
 
 <PageContainer>
-	<NavBar slot="header" {navigation} >
-		<DesktopMenu slot="desktop" {navigation}
+	<NavBar slot="header"  >
+		<DesktopMenu slot="desktop" navigation={topNavigation}
 			on:toggleopen={toggleOpen}	
 			>
 			<h2 slot="brand" class="text-contrast-700 text-2xl">Brian Ketelsen</h2>
 		</DesktopMenu>
-		<MobileMenu  {open} slot="mobile" {navigation}></MobileMenu>
+		<MobileMenu  {open} slot="mobile" navigation={topNavigation}></MobileMenu>
 	</NavBar>
 	<slot></slot>
-	<Footer slot="footer"></Footer>
+	<SimpleCentered slot="footer" navigation={bottomNav}/>
 </PageContainer>

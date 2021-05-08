@@ -39,7 +39,7 @@ devDependencies:
   '@sveltejs/adapter-static': 1.0.0-next.9
   '@sveltejs/kit': 1.0.0-next.102_svelte@3.38.2
   autoprefixer: 10.2.5_postcss@8.2.14
-  components: github.com/cueblox/components/04e3570dfe486782f7a24d05e54748ea3d063d46
+  components: github.com/cueblox/components/aae50b750e0be4378a9d065291db8858f080b20d
   cssnano: 5.0.2_postcss@8.2.14
   postcss: 8.2.14
   postcss-load-config: 3.0.1
@@ -1869,8 +1869,8 @@ packages:
     engines: {node: '>= 6'}
     dev: true
 
-  github.com/cueblox/components/04e3570dfe486782f7a24d05e54748ea3d063d46:
-    resolution: {tarball: https://codeload.github.com/cueblox/components/tar.gz/04e3570dfe486782f7a24d05e54748ea3d063d46}
+  github.com/cueblox/components/aae50b750e0be4378a9d065291db8858f080b20d:
+    resolution: {tarball: https://codeload.github.com/cueblox/components/tar.gz/aae50b750e0be4378a9d065291db8858f080b20d}
     name: components
     prepare: true
     requiresBuild: true
