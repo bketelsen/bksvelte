@@ -106,7 +106,7 @@
 		<DesktopMenu slot="desktop" navigation={site.primary_navigation}
 			on:toggleopen={toggleOpen}	
 			>
-			<h2 slot="brand" class="text-contrast-700 text-2xl">Brian Ketelsen</h2>
+			<h2 slot="brand" class="text-contrast-700 text-2xl">{site.brand_name}</h2>
 		</DesktopMenu>
 		<MobileMenu  {open} slot="mobile" navigation={site.primary_navigation}></MobileMenu>
 	</NavBar>
