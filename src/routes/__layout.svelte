@@ -14,18 +14,7 @@
 </script>
 <script>
 	export let site;
-	const topNavigation = [
-		{name:"Home", route:"/"},
-		{name:"Blog", route:"/articles"},
-		{name:"Categories", route:"/categories"},
-		{name:"About", route:"/about"},
-	]
-	const bottomNav = [
-		{name:"Home", route:"/"},
-		{name:"ALT Blog", route:"/altarticles"},
-		{name:"Categories", route:"/categories"},
-		{name:"About", route:"/about"},
-	]
+
 	import { PageContainer, NavBar, DesktopMenu, MobileMenu, SimpleCentered } from 'components'
 
 	let open = false;
@@ -35,6 +24,10 @@
 	}
 
 	import "../app.postcss";
+	/* 
+	these are here because tailwind scans the source looking for style names to keep
+	when it prunes the css for production usage.
+	*/
 	const keepStylesPlease = [
 		'text-contrast-50',
 		'text-contrast-100',
