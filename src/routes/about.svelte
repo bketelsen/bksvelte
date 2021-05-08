@@ -23,6 +23,10 @@
 	<title>{page.title}</title>
 </svelte:head>
 
-<InsetImage headline='This is the Headline' caption="I'm a Caption" title='{page.title}' lede='{page.excerpt}' imagealt="{page.title}" image='{page.image}'>
+<InsetImage 
+	headline='Life on the Edge' 
+	title='{page.title}' 
+	lede='{page.excerpt}' 
+	image='{page.image}'>
 	<SvelteMarkdown source={page.body} />
 </InsetImage>

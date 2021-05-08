@@ -96,6 +96,13 @@
 		'bg-bg-700',
 		'bg-bg-800',
 		'bg-bg-900',
+		'bg-teal-600',
+		'bg-purple-600',
+		'bg-lime-600',
+		'bg-amber-600',
+		'bg-orange-600',
+		'bg-red-600',
+		'bg-bluegray-600',
 		'prose-contrast',
 	]
 
