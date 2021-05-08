@@ -21,7 +21,18 @@ export const getWebsites = () => {
 	const { websites } = data;
 	return websites;
 };
+export const getSections = () => {
+	const { sections } = data;
+	return sections;
+};
 
+export const getImage = (id) => {
+	const { images } = data;
+	var doc = images.find((a) => {
+		return a.id === id;
+	});
+	return doc;
+};
 export const getArticle = (id) => {
 	const { articles } = data;
 	var doc = articles.find((a) => {
@@ -42,12 +53,27 @@ export const getArticle = (id) => {
 	}
 	return doc;
 };
+export const getSection = (id) => {
+	const { sections } = data;
+	var doc = sections.find((a) => {
+		return a.id === id;
+	});
 
+	if (doc.image_id) {
+		const img = getImage(doc.image_id);
+		doc['image'] = img;
+	}
+	return doc;
+};
 export const getProfile = (id) => {
 	const { profiles } = data;
 	var doc = profiles.find((a) => {
 		return a.id === id;
 	});
+	if (doc.image_id) {
+		const img = getImage(doc.image_id);
+		doc['image'] = img;
+	}
 	return doc;
 };
 
@@ -58,17 +84,15 @@ export const getCategory = (id) => {
 	});
 	const catArticles = articles.filter((article) => article.category_id === id);
 	doc['articles'] = catArticles;
+	if (doc.image_id) {
+		const img = getImage(doc.image_id);
+		doc['image'] = img;
+	}
 	return doc;
 };
 
 
-export const getImage = (id) => {
-	const { images } = data;
-	var doc = images.find((a) => {
-		return a.id === id;
-	});
-	return doc;
-};
+
 export const getPage = (id) => {
 	const { pages } = data;
 	var doc = pages.find((a) => {
