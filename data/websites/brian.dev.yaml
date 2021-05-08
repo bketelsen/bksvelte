@@ -13,6 +13,8 @@ primary_navigation:
 secondary_navigation:
   - name: Home
     route: '/'
+  - name: Alt About
+    route: '/altabout'
   - name: Alt Blog
     route: '/altarticles'
   - name: Categories
