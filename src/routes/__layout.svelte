@@ -15,7 +15,7 @@
 
 <script>
 	export let site;
-
+	$: console.log(site.profile)
 	import { PageContainer, NavBar, DesktopMenu, MobileMenu, SimpleCentered } from 'components';
 
 	let open = false;
@@ -35,5 +35,5 @@
 		<MobileMenu {open} slot="mobile" navigation={site.primary_navigation} />
 	</NavBar>
 	<slot />
-	<SimpleCentered slot="footer" navigation={site.secondary_navigation} />
+	<SimpleCentered slot="footer" profile={site.profile} navigation={site.secondary_navigation} />
 </PageContainer>

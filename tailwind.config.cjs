@@ -1,5 +1,7 @@
 const { tailwindExtractor } = require('tailwindcss/lib/lib/purgeUnusedStyles');
 const colors = require('tailwindcss/colors');
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 
 module.exports = {
 	mode: 'aot',
@@ -23,6 +25,9 @@ module.exports = {
 	darkMode: 'class', // or 'media' or 'class'
 	theme: {
 		extend: {
+			fontFamily: {
+				sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+			  },
 			colors: {
 				teal: colors.teal,
 				purple: colors.purple,
