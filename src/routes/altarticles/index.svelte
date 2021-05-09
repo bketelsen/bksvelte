@@ -19,7 +19,6 @@
 		BorderlessCardGroup,
 		BodyWithoutHeader,
 		SimpleHeader,
-		SimpleCardGroup
 	} from 'components';
 	let title = 'Articles';
 	let description = 'News from the Edge';

@@ -4,7 +4,7 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 
 module.exports = {
-	mode: 'aot',
+	mode: 'jit',
 	purge: {
 		content: [
 			'./src/**/*.{html,js,svelte,ts}',
