@@ -1,15 +1,13 @@
 <script>
-  import {page} from '$app/stores';
-  export let navigation;
-  export let brand;
+	import { page } from '$app/stores';
+	export let navigation;
+	export let brand;
 
-  let open = false;
- 
-  function handleOpen(event){
-    open = !open;
-  }
+	let open = false;
 
-
+	function handleOpen(event) {
+		open = !open;
+	}
 </script>
 
 <nav class="bg-white shadow">
@@ -18,7 +16,6 @@
 			<div class="flex px-2 lg:px-0">
 				<div class="flex-shrink-0 flex inline-flex items-center px-1 pt-1z text-sm font-medium">
 					<h2>{brand}</h2>
-
 				</div>
 				<div class="hidden lg:ml-6 lg:flex lg:space-x-8">
 					<!-- Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" -->
@@ -26,7 +23,7 @@
 					{#each navigation as item}
 						<a
 							href={item.route}
-              				sveltekit:prefetch
+							sveltekit:prefetch
 							class="{item.route === $page.path
 								? 'border-cyan-500 text-gray-900'
 								: 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'} inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
@@ -73,7 +70,7 @@
 					class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
 					aria-controls="mobile-menu"
 					aria-expanded="false"
-          			on:click={handleOpen}
+					on:click={handleOpen}
 				>
 					<span class="sr-only">Open main menu</span>
 					<!--
@@ -127,14 +124,16 @@
 	</div>
 
 	<!-- Mobile menu, show/hide based on menu state. -->
-	<div class="{open?"":"hidden"} lg:hidden" id="mobile-menu">
+	<div class="{open ? '' : 'hidden'} lg:hidden" id="mobile-menu">
 		<div class="pt-2 pb-3 space-y-1">
 			<!-- Current: "bg-indigo-50 border-indigo-500 text-indigo-700", Default: "border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800" -->
 			{#each navigation as item}
 				<a
 					href={item.route}
-          sveltekit:prefetch
-					class="{item.route === $page.path?"bg-cyan-50 border-cyan-500 text-cyan-700":"border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800"}  block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+					sveltekit:prefetch
+					class="{item.route === $page.path
+						? 'bg-cyan-50 border-cyan-500 text-cyan-700'
+						: 'border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800'}  block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
 					>{item.name}</a
 				>
 			{/each}

@@ -1,25 +1,23 @@
 <script context="module">
-
 	// since there's no dynamic data here, we can prerender
 	// it so that it gets served as a static asset in prod
 	export const prerender = true;
-	import {getArticles} from '$lib/dataStore';
+	import { getArticles } from '$lib/dataStore';
 
-
-  // see https://kit.svelte.dev/docs#loading
+	// see https://kit.svelte.dev/docs#loading
 	export const load = async ({ fetch }) => {
-			const articles =  getArticles()
-			return {
-				props: { articles }
-			};
+		const articles = getArticles();
+		return {
+			props: { articles }
+		};
 	};
 </script>
 
 <script>
 	import { ArticleCard, BodyWithHeader, CardGroup } from 'components';
-	let title="Articles";
-	let heading="Blog Posts";
-	let description="News from the Edge";
+	let title = 'Articles';
+	let heading = 'Blog Posts';
+	let description = 'News from the Edge';
 	export let articles;
 </script>
 
@@ -29,7 +27,7 @@
 <BodyWithHeader {title} {heading} {description}>
 	<CardGroup>
 		{#each articles as article (article.id)}
-			<ArticleCard article={article} />
+			<ArticleCard {article} />
 		{/each}
 	</CardGroup>
 </BodyWithHeader>

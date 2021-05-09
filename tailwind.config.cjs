@@ -6,7 +6,7 @@ module.exports = {
 	purge: {
 		content: [
 			'./src/**/*.{html,js,svelte,ts}',
-			'./node_modules/components/**/*.{html,js,svelte,ts}',
+			'./node_modules/components/**/*.{html,js,svelte,ts}'
 		],
 		options: {
 			defaultExtractor: (content) => [
@@ -34,7 +34,7 @@ module.exports = {
 				bluegray: colors.blueGray,
 				main: colors.gray,
 				bg: colors.gray,
-				contrast: colors.cyan,
+				contrast: colors.cyan
 			}
 		}
 	},
@@ -42,7 +42,7 @@ module.exports = {
 		require('@tailwindcss/typography'),
 		require('@tailwindcss/forms'),
 		require('@tailwindcss/aspect-ratio'),
-		function({ addUtilities, addComponents, e, prefix, config }) {
+		function ({ addUtilities, addComponents, e, prefix, config }) {
 			// add your plugin functionality here
 		}
 	]

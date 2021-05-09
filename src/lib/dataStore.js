@@ -74,7 +74,7 @@ export const getPage = (id) => {
 		const img = getImage(doc.image_id);
 		doc['image'] = img;
 	}
-	
+
 	return doc;
 };
 
@@ -90,34 +90,34 @@ export const getWebsite = (id) => {
 	return doc;
 };
 const { articles } = data;
-const fatArticles = articles.map(a => {
-	return getArticle(a.id)
-})
+const fatArticles = articles.map((a) => {
+	return getArticle(a.id);
+});
 
 const { categories } = data;
-const fatCategories = categories.map(c => {
-	return getCategory(c.id)
-})
+const fatCategories = categories.map((c) => {
+	return getCategory(c.id);
+});
 
 const { profiles } = data;
-const fatProfiles = profiles.map(p => {
-	return getProfile(p.id)
-})
+const fatProfiles = profiles.map((p) => {
+	return getProfile(p.id);
+});
 
 const { pages } = data;
-const fatPages = pages.map(p => {
-	return getPage(p.id)
-})
+const fatPages = pages.map((p) => {
+	return getPage(p.id);
+});
 
 const { websites } = data;
-const fatWebsites = websites.map(w => {
-	return getWebsite(w.id)
-})
+const fatWebsites = websites.map((w) => {
+	return getWebsite(w.id);
+});
 
 const { sections } = data;
-const fatSections = sections.map(s => {
-	return getSection(s.id)
-})
+const fatSections = sections.map((s) => {
+	return getSection(s.id);
+});
 
 export const getArticles = () => {
 	return fatArticles;

@@ -1,7 +1,7 @@
 <script>
 	export let categories;
 	export let title;
-	export let subtitle="";
+	export let subtitle = '';
 </script>
 
 <div class="relative bg-gray-50 py-16 sm:py-24 lg:py-32">

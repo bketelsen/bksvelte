@@ -1,6 +1,6 @@
 <script>
 	import Card from './card.svelte';
-	import {getArticle} from '$lib/dataStore'
+	import { getArticle } from '$lib/dataStore';
 	export let title;
 	export let heading;
 	export let description;
