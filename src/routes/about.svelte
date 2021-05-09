@@ -2,9 +2,12 @@
 	export const prerender = true;
 	import {getPage} from '$lib/dataStore';
 
+	import {transform} from '$lib/markdown';
 	// see https://kit.svelte.dev/docs#loading
 	export const load = async () => {
 		const doc = getPage('about')
+		const rendered = transform(doc.body)
+		doc["rendered"] = rendered;
             return {
                 props: {
 					page: doc,
@@ -15,7 +18,6 @@
 
 <script>
 	export let page;
-	import SvelteMarkdown from 'svelte-markdown';
 	import { InsetImage } from 'components';
 </script>
 
@@ -28,5 +30,5 @@
 	title='{page.title}' 
 	lede='{page.excerpt}' 
 	image='{page.image}'>
-	<SvelteMarkdown source={page.body} />
+    {@html page.rendered }
 </InsetImage>
