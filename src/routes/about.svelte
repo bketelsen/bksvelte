@@ -5,9 +5,15 @@
 	import { transform } from '$lib/markdown';
 	// see https://kit.svelte.dev/docs#loading
 	export const load = async () => {
-		const doc = getPage('about');
+		const doc = getPage('about');	
+		if (typeof window !== 'undefined') {
 		const rendered = transform(doc.body);
 		doc['rendered'] = rendered;
+		} else {
+			doc['rendered'] = doc.body;
+
+		}
+
 		return {
 			props: {
 				page: doc
@@ -19,7 +25,7 @@
 <script>
 	export let page;
 	import { InsetImage } from 'components';
-	import SharpImage from '$lib/components/SharpImage.svelte'
+	import SharpImage from '$lib/components/util/SharpImage.svelte'
 </script>
 
 <svelte:head>

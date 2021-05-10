@@ -19,7 +19,7 @@
 
 <script>
 	export let article;
-	import { CenteredPage } from 'components';
+	import  CenteredPage  from '$lib/components/content/CenteredPage.svelte';
 </script>
 
 <svelte:head>

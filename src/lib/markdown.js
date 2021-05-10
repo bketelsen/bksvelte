@@ -28,7 +28,5 @@ var processor = unified()
 
 
 export const transform = (text) => {
-	if (typeof window !== 'undefined') {
 	return processor.processSync(text)
-	}
 }
