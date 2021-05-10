@@ -47,7 +47,7 @@ dependencies:
   '@tailwindcss/aspect-ratio': 0.2.0
   '@tailwindcss/forms': 0.3.2_tailwindcss@2.1.2
   '@tailwindcss/typography': 0.4.0_tailwindcss@2.1.2
-  components: github.com/cueblox/components/f7f654443d1b802d5af9a4e73d44d460b8dd2c5e
+  components: github.com/cueblox/components/bfa2639449cf32b708d84619bf1d27c446a2122a
   cookie: 0.4.1
   rehype-stringify: 8.0.0
   remark-parse: 9.0.0
@@ -4437,8 +4437,8 @@ packages:
     resolution: {integrity: sha512-V50KMwwzqJV0NpZIZFwfOD5/lyny3WlSzRiXgA0G7VUnRlqttta1L6UQIHzd6EuBY/cHGfwTIck7w1yH6Q5zUw==}
     dev: false
 
-  github.com/cueblox/components/f7f654443d1b802d5af9a4e73d44d460b8dd2c5e:
-    resolution: {tarball: https://codeload.github.com/cueblox/components/tar.gz/f7f654443d1b802d5af9a4e73d44d460b8dd2c5e}
+  github.com/cueblox/components/bfa2639449cf32b708d84619bf1d27c446a2122a:
+    resolution: {tarball: https://codeload.github.com/cueblox/components/tar.gz/bfa2639449cf32b708d84619bf1d27c446a2122a}
     name: components
     version: 0.0.1
     prepare: true
