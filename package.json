@@ -44,7 +44,13 @@
 		"@tailwindcss/typography": "^0.4.0",
 		"components": "cueblox/components",
 		"cookie": "^0.4.1",
+		"rehype-stringify": "^8.0.0",
+		"remark-parse": "^9.0.0",
+		"remark-rehype": "^8.1.0",
+		"remark-stringify": "^9.0.1",
 		"svelte-markdown": "^0.1.8",
-		"svelte-seo": "^1.1.0"
+		"svelte-seo": "^1.1.0",
+		"unified": "^9.2.1",
+		"unist-util-visit": "^3.1.0"
 	}
 }

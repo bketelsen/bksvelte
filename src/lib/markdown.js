@@ -1,22 +1,14 @@
-import { Remarkable } from 'remarkable';
-import hljs from 'highlight.js';
+import markdown from 'remark-parse';
+import remark2rehype from 'remark-rehype';
+import stringify from 'rehype-stringify';
+import unified from 'unified';
 
-var md = new Remarkable({
-	highlight: function (str, lang) {
-		if (lang && hljs.getLanguage(lang)) {
-			try {
-				return hljs.highlight(str, { language: lang }).value;
-			} catch (err) {}
-		}
+var processor = unified()
+  .use(markdown)
+  .use(remark2rehype)
+  .use(stringify)
 
-		try {
-			return hljs.highlightAuto(str).value;
-		} catch (err) {}
-
-		return ''; // use external default escaping
-	}
-});
 
 export const transform = (text) => {
-	return md.render(text);
-};
+	return processor.processSync(text)
+}

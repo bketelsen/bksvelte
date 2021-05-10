@@ -31,6 +31,6 @@
 </InsetImage>
 <SharpImage 
 	baseurl="https://bkapi.vercel.app/api"
-	src="/images/contentful.png"
+	src="/images/bigbit.png"
 	class="object-cover"
 />
