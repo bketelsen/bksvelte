@@ -26,7 +26,9 @@
 	<title>{page.title}</title>
 </svelte:head>
 
-<InsetImage headline="Life on the Edge" title={page.title} lede={page.excerpt} image={page.image}>
+<InsetImage headline="Life on the Edge" title={page.title} 	baseurl="https://bkapi.vercel.app/api/"
+ lede={page.excerpt} image={page.image}>
+
 	{@html page.rendered}
 </InsetImage>
 <SharpImage 

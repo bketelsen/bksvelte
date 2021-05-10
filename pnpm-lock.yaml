@@ -12,7 +12,7 @@ specifiers:
   '@typescript-eslint/eslint-plugin': ^4.22.1
   '@typescript-eslint/parser': ^4.22.1
   autoprefixer: ^10.2.5
-  components: cueblox/components
+  components: github:cueblox/components
   compress-images: ^1.9.9
   cookie: ^0.4.1
   cssnano: ^5.0.2
@@ -47,7 +47,7 @@ dependencies:
   '@tailwindcss/aspect-ratio': 0.2.0
   '@tailwindcss/forms': 0.3.2_tailwindcss@2.1.2
   '@tailwindcss/typography': 0.4.0_tailwindcss@2.1.2
-  components: github.com/cueblox/components/69358e25f98d16fbd9a9e34ee3ee2b0a569073b0
+  components: github.com/cueblox/components/f02addc7cf0c14407c4d802934a739c08a22fd11
   cookie: 0.4.1
   rehype-stringify: 8.0.0
   remark-parse: 9.0.0
@@ -4437,8 +4437,8 @@ packages:
     resolution: {integrity: sha512-V50KMwwzqJV0NpZIZFwfOD5/lyny3WlSzRiXgA0G7VUnRlqttta1L6UQIHzd6EuBY/cHGfwTIck7w1yH6Q5zUw==}
     dev: false
 
-  github.com/cueblox/components/69358e25f98d16fbd9a9e34ee3ee2b0a569073b0:
-    resolution: {tarball: https://codeload.github.com/cueblox/components/tar.gz/69358e25f98d16fbd9a9e34ee3ee2b0a569073b0}
+  github.com/cueblox/components/f02addc7cf0c14407c4d802934a739c08a22fd11:
+    resolution: {tarball: https://codeload.github.com/cueblox/components/tar.gz/f02addc7cf0c14407c4d802934a739c08a22fd11}
     name: components
     version: 0.0.1
     prepare: true
