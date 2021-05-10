@@ -15,7 +15,6 @@
 
 <script>
 	export let site;
-	$: console.log(site.profile)
 	import { PageContainer, NavBar, DesktopMenu, MobileMenu, SimpleCentered } from 'components';
 
 	let open = false;

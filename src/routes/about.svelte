@@ -19,6 +19,7 @@
 <script>
 	export let page;
 	import { InsetImage } from 'components';
+	import SharpImage from '$lib/components/SharpImage.svelte'
 </script>
 
 <svelte:head>
@@ -28,3 +29,8 @@
 <InsetImage headline="Life on the Edge" title={page.title} lede={page.excerpt} image={page.image}>
 	{@html page.rendered}
 </InsetImage>
+<SharpImage 
+	baseurl="https://bkapi.vercel.app/api"
+	src="/images/contentful.png"
+	class="object-cover"
+/>

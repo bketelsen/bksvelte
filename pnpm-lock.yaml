@@ -4,6 +4,7 @@ specifiers:
   '@fontsource/fira-mono': ^4.3.0
   '@lukeed/uuid': ^2.0.0
   '@mattjennings/heroicons-svelte': ^0.0.1
+  '@sveltejs/adapter-node': ^1.0.0-next.20
   '@sveltejs/adapter-static': next
   '@sveltejs/kit': next
   '@tailwindcss/aspect-ratio': ^0.2.0
@@ -19,9 +20,7 @@ specifiers:
   eslint: ^7.26.0
   eslint-config-prettier: ^8.3.0
   eslint-plugin-svelte3: ^3.2.0
-  gifsicle: ^5.2.0
   highlight.js: ^10.7.2
-  pngquant-bin: ^6.0.0
   postcss: ^8.2.14
   postcss-load-config: ^3.0.1
   prettier: ~2.2.1
@@ -48,20 +47,19 @@ dependencies:
   svelte-seo: 1.1.0
 
 devDependencies:
+  '@sveltejs/adapter-node': 1.0.0-next.20
   '@sveltejs/adapter-static': 1.0.0-next.9
-  '@sveltejs/kit': 1.0.0-next.103_svelte@3.38.2
+  '@sveltejs/kit': 1.0.0-next.104_svelte@3.38.2
   '@typescript-eslint/eslint-plugin': 4.22.1_b96c9280c6ac79e4dfcda76a733858e3
   '@typescript-eslint/parser': 4.22.1_eslint@7.26.0+typescript@4.2.4
   autoprefixer: 10.2.5_postcss@8.2.14
-  components: github.com/cueblox/components/8f281f3ade3894bdeac9c8e27bef6df0c2ec3007
+  components: github.com/cueblox/components/f524fea3e5fafc18488cd293a2cd20a36f4152a4
   compress-images: 1.9.9
   cssnano: 5.0.2_postcss@8.2.14
   eslint: 7.26.0
   eslint-config-prettier: 8.3.0_eslint@7.26.0
   eslint-plugin-svelte3: 3.2.0_eslint@7.26.0+svelte@3.38.2
-  gifsicle: 5.2.0
   highlight.js: 10.7.2
-  pngquant-bin: 6.0.0
   postcss: 8.2.14
   postcss-load-config: 3.0.1
   prettier: 2.2.1
@@ -183,12 +181,16 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
+  /@sveltejs/adapter-node/1.0.0-next.20:
+    resolution: {integrity: sha512-ornNW289XN4TyY3tRXVGH38FxrqLsw1MHn4oq92T7U6EqnSbw/22waMZnPBQUxcj5GxZsXuuFjeBjn1BWt0x2A==}
+    dev: true
+
   /@sveltejs/adapter-static/1.0.0-next.9:
     resolution: {integrity: sha512-yqZ+4dzi+2+2jDPHCrI7WrLdXyQ/0U56a7aFdepmodpvpxhazF203D1ez+AtTo27FjMmHjfI+q0O2FivUOosxg==}
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.103_svelte@3.38.2:
-    resolution: {integrity: sha512-g3Q3AnYloJVpXu83yfQLddYcsTYJ5M/NaoRTyv0qCTMNea1L9HTGrI8grdi5kF8wbPCUcX9fLA9RYRDfEkjF/Q==}
+  /@sveltejs/kit/1.0.0-next.104_svelte@3.38.2:
+    resolution: {integrity: sha512-1ww5NvpGYJdKXR4bfxo04AM4izcJwTziFIVrImq3jqS2b4d8l3KfrJOqgv+e07RvW/WakrCRPAyZzeHpXLdkZg==}
     engines: {node: '>= 12.17.0'}
     hasBin: true
     peerDependencies:
@@ -1487,36 +1489,6 @@ packages:
       strip-eof: 1.0.0
     dev: true
 
-  /execa/4.1.0:
-    resolution: {integrity: sha512-j5W0//W7f8UxAn8hXVnwG8tLwdiUy4FJLcSupCg6maBYZDpyBvTApK7KyuI4bKj8KOh1r2YH+6ucuYtJv1bTZA==}
-    engines: {node: '>=10'}
-    dependencies:
-      cross-spawn: 7.0.3
-      get-stream: 5.2.0
-      human-signals: 1.1.1
-      is-stream: 2.0.0
-      merge-stream: 2.0.0
-      npm-run-path: 4.0.1
-      onetime: 5.1.2
-      signal-exit: 3.0.3
-      strip-final-newline: 2.0.0
-    dev: true
-
-  /execa/5.0.0:
-    resolution: {integrity: sha512-ov6w/2LCiuyO4RLYGdpFGjkcs0wMTgGE8PrkTHikeUy5iJekXyPIKUjifk5CsE0pt7sMCrMZ3YNqoCj6idQOnQ==}
-    engines: {node: '>=10'}
-    dependencies:
-      cross-spawn: 7.0.3
-      get-stream: 6.0.1
-      human-signals: 2.1.0
-      is-stream: 2.0.0
-      merge-stream: 2.0.0
-      npm-run-path: 4.0.1
-      onetime: 5.1.2
-      signal-exit: 3.0.3
-      strip-final-newline: 2.0.0
-    dev: true
-
   /executable/4.1.1:
     resolution: {integrity: sha512-8iA79xD3uAch729dUG8xaaBBFGaEa0wdD2VkYLFHwlqosEj/jT66AzcreRDSgV7ehnNLBW2WR5jIXwGKjVdTLg==}
     engines: {node: '>=4'}
@@ -1739,30 +1711,6 @@ packages:
       pump: 3.0.0
     dev: true
 
-  /get-stream/5.2.0:
-    resolution: {integrity: sha512-nBF+F1rAZVCu/p7rjzgA+Yb4lfYXrpl7a6VmJrU8wF9I1CKvP/QwPNZHnOlwbTkY6dvtFIzFMSyQXbLoTQPRpA==}
-    engines: {node: '>=8'}
-    dependencies:
-      pump: 3.0.0
-    dev: true
-
-  /get-stream/6.0.1:
-    resolution: {integrity: sha512-ts6Wi+2j3jQjqi70w5AlN8DFnkSwC+MqmxEzdEALB2qXZYV3X/b1CTfgPLGJNMeAWxdPfU8FO1ms3NUfaHCPYg==}
-    engines: {node: '>=10'}
-    dev: true
-
-  /gifsicle/5.2.0:
-    resolution: {integrity: sha512-vOIS3j0XoTCxq9pkGj43gEix82RkI5FveNgaFZutjbaui/HH+4fR8Y56dwXDuxYo8hR4xOo6/j2h1WHoQW6XLw==}
-    engines: {node: '>=10'}
-    hasBin: true
-    requiresBuild: true
-    dependencies:
-      bin-build: 3.0.0
-      bin-wrapper: 4.1.0
-      execa: 5.0.0
-      logalot: 2.1.0
-    dev: true
-
   /glob-base/0.3.0:
     resolution: {integrity: sha1-27Fk9iIbHAscz4Kuoyi0l98Oo8Q=}
     engines: {node: '>=0.10.0'}
@@ -1933,16 +1881,6 @@ packages:
 
   /http-cache-semantics/3.8.1:
     resolution: {integrity: sha512-5ai2iksyV8ZXmnZhHH4rWPoxxistEexSi5936zIQ1bnNTW5VnA85B6P/VpXiRM017IgRvb2kKo1a//y+0wSp3w==}
-    dev: true
-
-  /human-signals/1.1.1:
-    resolution: {integrity: sha512-SEQu7vl8KjNL2eoGBLF3+wAjpsNfA9XMlXAYj/3EdaNfAlxKthD1xjEQfGOUhllCGGJVNY34bRr6lPINhNjyZw==}
-    engines: {node: '>=8.12.0'}
-    dev: true
-
-  /human-signals/2.1.0:
-    resolution: {integrity: sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==}
-    engines: {node: '>=10.17.0'}
     dev: true
 
   /ieee754/1.2.1:
@@ -2136,11 +2074,6 @@ packages:
   /is-stream/1.1.0:
     resolution: {integrity: sha1-EtSj3U5o4Lec6428hBc66A2RykQ=}
     engines: {node: '>=0.10.0'}
-    dev: true
-
-  /is-stream/2.0.0:
-    resolution: {integrity: sha512-XCoy+WlUr7d1+Z8GgSuXmpuUFC9fOhRXglJMx+dwLKTkL44Cjd4W1Z5P+BQZpr+cR93aGP4S/s7Ftw6Nd/kiEw==}
-    engines: {node: '>=8'}
     dev: true
 
   /is-utf8/0.2.1:
@@ -2387,10 +2320,6 @@ packages:
       trim-newlines: 1.0.0
     dev: true
 
-  /merge-stream/2.0.0:
-    resolution: {integrity: sha512-abv/qOcuPfk3URPfDzmZU1LKmuw8kT+0nIHvKrKgFrwifol/doWcdA4ZqsWQ8ENrFKkd67Mfpo/LovbIUsbt3w==}
-    dev: true
-
   /merge2/1.4.1:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
     engines: {node: '>= 8'}
@@ -2407,11 +2336,6 @@ packages:
   /mime-db/1.47.0:
     resolution: {integrity: sha512-QBmA/G2y+IfeS4oktet3qRZ+P5kPhCKRXxXnQEudYqUaEioAU1/Lq2us3D/t1Jfo4hE9REQPrbB7K5sOczJVIw==}
     engines: {node: '>= 0.6'}
-    dev: true
-
-  /mimic-fn/2.1.0:
-    resolution: {integrity: sha512-OqbOk5oEQeAZ8WXWydlu9HJjz9WVdEIvamMCcXmuqUYjTknH/sqsWvhQ3vgwKFRR1HpjvNBKQ37nbJgYzGqGcg==}
-    engines: {node: '>=6'}
     dev: true
 
   /mimic-response/1.0.1:
@@ -2540,13 +2464,6 @@ packages:
     engines: {node: '>=4'}
     dependencies:
       path-key: 2.0.1
-    dev: true
-
-  /npm-run-path/4.0.1:
-    resolution: {integrity: sha512-S48WzZW777zhNIrn7gxOlISNAqi9ZC/uQFnRdbeIHhZhCA6UqpkOT8T1G7BvfdgP4Er8gF4sUbaS0i7QvIfCWw==}
-    engines: {node: '>=8'}
-    dependencies:
-      path-key: 3.1.1
     dev: true
 
   /npm/6.14.13:
@@ -2699,13 +2616,6 @@ packages:
     resolution: {integrity: sha1-WDsap3WWHUsROsF9nFC6753Xa9E=}
     dependencies:
       wrappy: 1.0.2
-    dev: true
-
-  /onetime/5.1.2:
-    resolution: {integrity: sha512-kbpaSSGJTWdAY5KPVeMOKXSrPtr8C8C7wodJbcsd51jRnmD+GZu8Y0VoU6Dm5Z4vWr0Ig/1NKuWRKf7j5aaYSg==}
-    engines: {node: '>=6'}
-    dependencies:
-      mimic-fn: 2.1.0
     dev: true
 
   /optionator/0.9.1:
@@ -2915,18 +2825,6 @@ packages:
     requiresBuild: true
     dependencies:
       bin-wrapper: 4.1.0
-      logalot: 2.1.0
-    dev: true
-
-  /pngquant-bin/6.0.0:
-    resolution: {integrity: sha512-oXWAS9MQ9iiDAJRdAZ9KO1mC5UwhzKkJsmetiu0iqIjJuW7JsuLhmc4JdRm7uJkIWRzIAou/Vq2VcjfJwz30Ow==}
-    engines: {node: '>=10'}
-    hasBin: true
-    requiresBuild: true
-    dependencies:
-      bin-build: 3.0.0
-      bin-wrapper: 4.1.0
-      execa: 4.1.0
       logalot: 2.1.0
     dev: true
 
@@ -3763,11 +3661,6 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /strip-final-newline/2.0.0:
-    resolution: {integrity: sha512-BrpvfNAE3dcvq7ll3xVumzjKjZQ5tI1sEUIKr3Uoks0XUl45St3FlatVqef9prk4jRDzhW6WZg+3bk93y6pLjA==}
-    engines: {node: '>=6'}
-    dev: true
-
   /strip-indent/1.0.1:
     resolution: {integrity: sha1-DHlipq3vp7vUrDZkYKY4VSrhoKI=}
     engines: {node: '>=0.10.0'}
@@ -4229,8 +4122,8 @@ packages:
       fd-slicer: 1.1.0
     dev: true
 
-  github.com/cueblox/components/8f281f3ade3894bdeac9c8e27bef6df0c2ec3007:
-    resolution: {tarball: https://codeload.github.com/cueblox/components/tar.gz/8f281f3ade3894bdeac9c8e27bef6df0c2ec3007}
+  github.com/cueblox/components/f524fea3e5fafc18488cd293a2cd20a36f4152a4:
+    resolution: {tarball: https://codeload.github.com/cueblox/components/tar.gz/f524fea3e5fafc18488cd293a2cd20a36f4152a4}
     name: components
     prepare: true
     requiresBuild: true
