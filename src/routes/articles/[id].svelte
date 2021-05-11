@@ -41,13 +41,14 @@
 </script>
 <script>
 	export let article;
-
+	import ArticleSeo from '$lib/components/util/ArticleSeo.svelte';
 	import  CenteredPage  from '$lib/components/content/CenteredPage.svelte';
 </script>
 
 <svelte:head>
 	<title>{article.title}</title>
 </svelte:head>
+<ArticleSeo {article} />
 
 <CenteredPage image={article.image} headline={article.category.name} title={article.title} lede={article.excerpt}>
 {@html article.rendered}	
