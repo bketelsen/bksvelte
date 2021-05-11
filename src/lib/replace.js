@@ -28,9 +28,7 @@ export default function (md, opts) {
             if (blockToken.type === 'inline' && blockToken.children) {
               blockToken.children.forEach(function (token) {
                 var type = token.type
-                if (type === 'link_open') {
-                  replaceAttr(token, 'href', replace, state.env)
-                } else if (type === 'image') {
+                if (type === 'image') {
                   replaceAttr(token, 'src', replace, state.env)
                 }
               })
