@@ -49,7 +49,7 @@
 	<title>{article.title}</title>
 </svelte:head>
 
-<CenteredPage headline={article.category.name} title={article.title} lede={article.excerpt}>
+<CenteredPage image={article.image} headline={article.category.name} title={article.title} lede={article.excerpt}>
 {@html article.rendered}	
 </CenteredPage>
 
