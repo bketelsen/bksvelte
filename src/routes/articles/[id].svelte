@@ -1,5 +1,6 @@
 <script context="module">
 	export const prerender = true;
+	export const hydrate = false;
 	import { get} from '$lib/api';
 	import MarkdownIt from 'markdown-it';
 	import replacelink from '$lib/replace';

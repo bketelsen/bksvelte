@@ -27,7 +27,7 @@
 	// see https://kit.svelte.dev/docs#loading
 	export const load = async () => {
 		const doc = await get('pages/about?_expand=image');
-		const rendered = md.render(doc.body);
+		const rendered = md.render(doc.body,doc);
 		doc['rendered'] = rendered;
 		return {
 			props: {
