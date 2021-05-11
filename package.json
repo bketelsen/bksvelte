@@ -39,6 +39,7 @@
 		"@fontsource/fira-mono": "^4.3.0",
 		"@lukeed/uuid": "^2.0.0",
 		"@mattjennings/heroicons-svelte": "^0.0.1",
+		"@sveltejs/adapter-static": "^1.0.0-next.0",
 		"@tailwindcss/aspect-ratio": "^0.2.0",
 		"@tailwindcss/forms": "^0.3.2",
 		"@tailwindcss/typography": "^0.4.0",
