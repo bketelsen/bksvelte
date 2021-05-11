@@ -20,7 +20,10 @@
 	let title = 'latest';
 	let heading = 'Featured Articles';
 	let description = 'Here are some of the hottest articles on the blog';
-	import { ArticleCard, BodyWithHeader, CardGroup } from 'components';
+	import  ArticleCard from '$lib/components/cards/ArticleCard.svelte';
+	import BodyWithHeader from '$lib/components/containers/BodyWithHeader.svelte';
+	import CardGroup  from '$lib/components/containers/CardGroup.svelte';
+	import ParagraphBrand from '$lib/components/sections/newsletter/ParagraphBrand.svelte';
 </script>
 
 <svelte:head>
@@ -50,5 +53,5 @@
 			<ArticleCard {article} />
 		{/each}
 	</CardGroup>
-
+	<ParagraphBrand />
 </BodyWithHeader>
