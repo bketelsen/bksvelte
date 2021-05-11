@@ -5,7 +5,11 @@ function replaceAttr (token, attrName, replace, env) {
       }
     })
   }
-  
+  function addAttr (token, attrName, value) {
+      token.attrs.push([attrName,value])
+      return
+  }
+
 export default function (md, opts) {
     md.core.ruler.after(
       'inline',
@@ -30,6 +34,10 @@ export default function (md, opts) {
                 var type = token.type
                 if (type === 'image') {
                   replaceAttr(token, 'src', replace, state.env)
+                  if(state.env.image) {
+                    addAttr(token,'width',state.env.image.width)
+                    addAttr(token,'height',state.env.image.height)
+                  }
                 }
               })
             }

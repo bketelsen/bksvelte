@@ -29,7 +29,7 @@
 		const { id } = page.params;
 		const doc = await get(`articles/${id}?_expand=category&_expand=image`);		
 
-		const rendered = md.render(doc.body);
+		const rendered = md.render(doc.body,doc);
 		doc['rendered'] = rendered;
 		return {
 			props: {
