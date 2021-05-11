@@ -68,7 +68,7 @@
 				</svg>
 			</a>
 		</div>
-		<p class="mt-8 text-base text-center text-main-400">
+		<p class="mt-8 text-base text-center text-main-600">
 			&copy; 2020 Workflow, Inc. All rights reserved.
 		</p>
 	</div>
