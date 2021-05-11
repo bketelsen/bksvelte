@@ -76,6 +76,7 @@
 			{/if}
 
 			<meta name="twitter:image" content={base + article.image.file_name} />
+      <meta name="twitter:site" content="@bketelsen" />
 		{/if}
 	{/if}
 
