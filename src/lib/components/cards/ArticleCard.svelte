@@ -2,7 +2,7 @@
     import SharpImage from '../util/SharpImage.svelte';
 
     export let article;
-    const baseurl = 'https://bkapi.vercel.app/api/'
+    const baseurl = import.meta.env.VITE_ASSET_BASE
 
   const colorMap = {
 	  "red": {

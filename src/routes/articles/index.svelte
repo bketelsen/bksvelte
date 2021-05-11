@@ -1,14 +1,12 @@
 <script context="module">
-	// since there's no dynamic data here, we can prerender
-	// it so that it gets served as a static asset in prod
 	export const prerender = true;
-	import { getArticles } from '$lib/dataStore';
+	import { get } from '$lib/api';
 
 	// see https://kit.svelte.dev/docs#loading
 	export const load = async ({ fetch }) => {
-		const articles = getArticles();
+		const articles = await get("articles?_expand=category&_expand=image");
 		return {
-			props: { articles }
+			props: { articles: articles}
 		};
 	};
 </script>

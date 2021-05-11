@@ -1,10 +1,10 @@
 <script context="module">
 	export const prerender = true;
-	import { getArticles } from '$lib/dataStore';
+	import { get } from '$lib/api';
 
 	// see https://kit.svelte.dev/docs#loading
 	export const load = async ({ fetch }) => {
-		const articles = getArticles();
+		const articles = await get("articles?_expand=category&_expand=image");
 		const featured = articles.filter((a) => {
 			return a.featured;
 		});

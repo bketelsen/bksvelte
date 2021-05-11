@@ -1,14 +1,11 @@
 <script context="module">
 	export const prerender = true;
-	import { getArticle } from '$lib/dataStore';
-	import { transform } from '$lib/markdown';
+	import { get} from '$lib/api';
 
 	// see https://kit.svelte.dev/docs#loading
 	export const load = async ({ page }) => {
 		const { id } = page.params;
-		const doc = getArticle(id);
-		const rendered = transform(doc.body);
-		doc['rendered'] = rendered;
+		const doc = await get(`articles/${id}?_expand=category&_expand=image`);		
 		return {
 			props: {
 				article: doc
@@ -19,7 +16,9 @@
 
 <script>
 	export let article;
-	import { CenteredPage } from 'components';
+	import SvelteMarkdown from 'svelte-markdown';
+
+	import  CenteredPage  from '$lib/components/content/CenteredPage.svelte';
 </script>
 
 <svelte:head>
@@ -27,7 +26,7 @@
 </svelte:head>
 
 <CenteredPage headline={article.category.name} title={article.title} lede={article.excerpt}>
-	{@html article.rendered}
+	<SvelteMarkdown source={article.body} />
 </CenteredPage>
 
 <style>

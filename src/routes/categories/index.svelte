@@ -2,11 +2,11 @@
 	// since there's no dynamic data here, we can prerender
 	// it so that it gets served as a static asset in prod
 	export const prerender = true;
-	import { getCategories } from '$lib/dataStore';
+	import { get } from '$lib/api';
 
 	// see https://kit.svelte.dev/docs#loading
 	export const load = async ({ fetch }) => {
-		const categories = getCategories();
+		const categories = await get("categories");
 		return {
 			props: { categories }
 		};
@@ -15,7 +15,9 @@
 
 <script>
 	export let categories;
-	import { SimpleCard, BodyWithHeader, SimpleCardGroup } from 'components';
+	import  SimpleCard from '$lib/components/cards/SimpleCard.svelte';
+	import BodyWithHeader from '$lib/components/containers/BodyWithHeader.svelte';
+	import SimpleCardGroup  from '$lib/components/containers/SimpleCardGroup.svelte';
 
 	let title = 'Categories';
 	let heading = 'Category List';

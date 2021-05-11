@@ -1,13 +1,18 @@
 <script context="module">
 	export const prerender = true;
-	import { getCategory } from '$lib/dataStore';
+	import { get } from '$lib/api';
 	// see https://kit.svelte.dev/docs#loading
 	export const load = async ({ page }) => {
 		const { id } = page.params;
-		const doc = getCategory(id);
+		const doc = await get(`categories/${id}`);
+		const articles = await get("articles?_expand=category&_expand=image");
+		const category_articles = articles.filter((a) => {
+			return a.category_id === id;
+		});
 		return {
 			props: {
-				category: doc
+				category: doc,
+				articles: category_articles
 			}
 		};
 	};
@@ -15,7 +20,10 @@
 
 <script>
 	export let category;
-	import { ArticleCard, BodyWithHeader, CardGroup } from 'components';
+	export let articles;
+	import ArticleCard from '$lib/components/cards/ArticleCard.svelte';
+	import BodyWithHeader from '$lib/components/containers/BodyWithHeader.svelte';
+	import CardGroup  from '$lib/components/containers/CardGroup.svelte';
 
 	let title = 'Category';
 	$: heading = category.name;
@@ -28,7 +36,7 @@
 
 <BodyWithHeader {title} {heading} {description}>
 	<CardGroup>
-		{#each category.articles as article (article.id)}
+		{#each articles as article (article.id)}
 			<ArticleCard {article} />
 		{/each}
 	</CardGroup>

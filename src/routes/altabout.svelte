@@ -1,13 +1,10 @@
 <script context="module">
 	export const prerender = true;
-	import { getPage } from '$lib/dataStore';
+	import { get } from '$lib/api';
 
-	import { transform } from '$lib/markdown';
 	// see https://kit.svelte.dev/docs#loading
 	export const load = async () => {
-		const doc = getPage('about');
-		const rendered = transform(doc.body);
-		doc['rendered'] = rendered;
+		const doc = await get('pages/about?_expand=image');	
 		return {
 			props: {
 				page: doc
@@ -18,7 +15,8 @@
 
 <script>
 	export let page;
-	import { SplitPageWithImage } from 'components';
+	import  SplitPageWithImage  from '$lib/components/content/SplitPageWithImage.svelte';
+	import SvelteMarkdown from 'svelte-markdown';
 </script>
 
 <svelte:head>
@@ -31,5 +29,5 @@
 	lede={page.excerpt}
 	image={page.image}
 >
-	{@html page.rendered}
+	<SvelteMarkdown source={page.body} />
 </SplitPageWithImage>

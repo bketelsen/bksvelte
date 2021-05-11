@@ -2,11 +2,11 @@
 	// since there's no dynamic data here, we can prerender
 	// it so that it gets served as a static asset in prod
 	export const prerender = true;
-	import { getWebsite } from '$lib/dataStore';
+	import { get } from '$lib/api';
 
 	// see https://kit.svelte.dev/docs#loading
 	export const load = async ({ fetch }) => {
-		const site = getWebsite('brian.dev');
+		const site = await get('websites/brian.dev?_expand=profile');
 		return {
 			props: { site: site }
 		};
@@ -15,7 +15,12 @@
 
 <script>
 	export let site;
-	import { PageContainer, NavBar, DesktopMenu, MobileMenu, SimpleCentered } from 'components';
+	import PageContainer from '$lib/components/containers/PageContainer.svelte';
+	import NavBar from '$lib/components/nav/NavBar.svelte';
+	import DesktopMenu from '$lib/components/nav/DesktopMenu.svelte';
+	import MobileMenu from '$lib/components/nav/MobileMenu.svelte';
+	import SimpleCentered  from '$lib/components/footers/SimpleCentered.svelte';
+
 
 	let open = false;
 
