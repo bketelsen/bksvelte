@@ -11,7 +11,7 @@
 		"format": "prettier --write --plugin-search-dir=. ."
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-vercel": "next",
+		"@sveltejs/adapter-static": "next",
 		"@sveltejs/kit": "next",
 		"@typescript-eslint/eslint-plugin": "^4.23.0",
 		"@typescript-eslint/parser": "^4.23.0",
@@ -39,7 +39,6 @@
 		"@fontsource/fira-mono": "^4.3.0",
 		"@lukeed/uuid": "^2.0.0",
 		"@mattjennings/heroicons-svelte": "^0.0.1",
-		"@sveltejs/adapter-static": "^1.0.0-next.0",
 		"@tailwindcss/aspect-ratio": "^0.2.0",
 		"@tailwindcss/forms": "^0.3.2",
 		"@tailwindcss/typography": "^0.4.0",

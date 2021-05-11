@@ -4,8 +4,7 @@ specifiers:
   '@fontsource/fira-mono': ^4.3.0
   '@lukeed/uuid': ^2.0.0
   '@mattjennings/heroicons-svelte': ^0.0.1
-  '@sveltejs/adapter-static': ^1.0.0-next.0
-  '@sveltejs/adapter-vercel': next
+  '@sveltejs/adapter-static': next
   '@sveltejs/kit': next
   '@tailwindcss/aspect-ratio': ^0.2.0
   '@tailwindcss/forms': ^0.3.2
@@ -45,7 +44,6 @@ dependencies:
   '@fontsource/fira-mono': 4.3.0
   '@lukeed/uuid': 2.0.0
   '@mattjennings/heroicons-svelte': 0.0.1_svelte@3.38.2
-  '@sveltejs/adapter-static': 1.0.0-next.0
   '@tailwindcss/aspect-ratio': 0.2.0
   '@tailwindcss/forms': 0.3.2_tailwindcss@2.1.2
   '@tailwindcss/typography': 0.4.0_tailwindcss@2.1.2
@@ -61,7 +59,7 @@ dependencies:
   unist-util-visit: 3.1.0
 
 devDependencies:
-  '@sveltejs/adapter-vercel': 1.0.0-next.17_svelte@3.38.2
+  '@sveltejs/adapter-static': 1.0.0-next.9
   '@sveltejs/kit': 1.0.0-next.104_svelte@3.38.2
   '@typescript-eslint/eslint-plugin': 4.23.0_7cfaee78cda985ff9bc3d8b5cb92a136
   '@typescript-eslint/parser': 4.23.0_eslint@7.26.0+typescript@4.2.4
@@ -193,19 +191,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /@sveltejs/adapter-static/1.0.0-next.0:
-    resolution: {integrity: sha512-5QYrPSjfqI/Jd2av/WuwhZjRZHaWu8tGmBHM6dh5W7cd4s0PG3eW0p4eASZESHmtCFWGG00PYMRjUUFPPtEcOg==}
-    dev: false
-
-  /@sveltejs/adapter-vercel/1.0.0-next.17_svelte@3.38.2:
-    resolution: {integrity: sha512-35Z4R9V4+katvCZz37+E3pjcacQq8goIqwuClIVnnSK7+OUd6LoGb/cFoHm7OdvoSLUKaXSZ9/bLF/hwpmfJhQ==}
-    dependencies:
-      '@sveltejs/kit': 1.0.0-next.104_svelte@3.38.2
-      esbuild: 0.11.20
-    transitivePeerDependencies:
-      - rollup
-      - supports-color
-      - svelte
+  /@sveltejs/adapter-static/1.0.0-next.9:
+    resolution: {integrity: sha512-yqZ+4dzi+2+2jDPHCrI7WrLdXyQ/0U56a7aFdepmodpvpxhazF203D1ez+AtTo27FjMmHjfI+q0O2FivUOosxg==}
     dev: true
 
   /@sveltejs/kit/1.0.0-next.104_svelte@3.38.2:
