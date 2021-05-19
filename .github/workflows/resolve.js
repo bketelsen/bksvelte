@@ -7,7 +7,6 @@ import { readJSON, removeFile, writeJSON } from 'https://deno.land/x/flat@0.0.10
 // Step 1: Read the downloaded_filename JSON
 const filename = Deno.args[0] // Same name as downloaded_filename `const filename = 'btc-price.json';`
 const json = await readJSON(filename)
-console.log(json)
 
 // Step 2: Filter specific data we want to keep and write to a new JSON file
 const articles = json["articles"];
@@ -21,6 +20,7 @@ const sections = json["sections"];
 const websites = json["websites"];
 
 const rProfiles = resolveProfiles();
+
 const rCategories = resolveCategories();
 const rWebsites = resolveWebsites();
 const rSections = resolveSections();
@@ -41,9 +41,6 @@ const newData = {
 await writeJSON(filename, newData) // create a new JSON file with just the Bitcoin price
 console.log("Wrote a post process file")
 
-// Optionally delete the original file
-// await removeFile('./btc-price.json') // equivalent to removeFile('btc-price.json')
-
 function resolve(id, collection) {
     return collection.find((p) => p["id"] === id)
 }
@@ -53,6 +50,7 @@ function resolveProfiles() {
         if (w.image_id) {
             w["image"] = resolve(w.image_id, images)
         }
+        return w;
     })
 }
 function resolveSections() {
@@ -60,13 +58,18 @@ function resolveSections() {
         if (w.image_id) {
             w["image"] = resolve(w.image_id, images)
         }
+        return w;
     })
 }
 function resolveWebsites() {
     return websites.map((w) => {
+        console.log(w)
         if (w.profile_id) {
+            console.log(w.profile_id)
+            console.log(rProfiles)
             w["profile"] = resolve(w.profile_id, rProfiles)
         }
+        return w;
     })
 }
 function resolveCategories() {
@@ -74,6 +77,7 @@ function resolveCategories() {
         if (w.image_id) {
             w["image"] = resolve(w.image_id, images)
         }
+        return w;
     })
 }
 function resolveArticles() {
@@ -87,6 +91,7 @@ function resolveArticles() {
         if (a.category_id) {
             a["category"] = resolve(a.category_id, rCategories)
         }
+        return a;
     })
 }
 function resolvePages() {
@@ -100,5 +105,6 @@ function resolvePages() {
         if (a.section_id) {
             a["section"] = resolve(a.section_id, rSections)
         }
+        return a;
     })
 }
