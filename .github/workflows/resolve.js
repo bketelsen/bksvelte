@@ -20,7 +20,6 @@ const sections = json["sections"];
 const websites = json["websites"];
 
 const rProfiles = resolveProfiles();
-
 const rCategories = resolveCategories();
 const rWebsites = resolveWebsites();
 const rSections = resolveSections();
@@ -30,6 +29,7 @@ const rPages = resolvePages();
 const newData = {
     articles: rArticles,
     profiles: rProfiles,
+    categories: rCategories,
     websites: rWebsites,
     sections: rSections,
     pages: rPages,
