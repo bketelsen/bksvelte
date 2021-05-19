@@ -3,7 +3,6 @@
 	// it so that it gets served as a static asset in prod
 	export const prerender = true;
 	export const hydrate = false;
-	import { get } from '$lib/api';
 
 	// see https://kit.svelte.dev/docs#loading
 	export const load = async ({ fetch }) => {

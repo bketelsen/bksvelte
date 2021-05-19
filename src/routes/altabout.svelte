@@ -1,6 +1,5 @@
 <script context="module">
 	export const prerender = true;
-	import { get} from '$lib/api';
 	import MarkdownIt from 'markdown-it';
 	import replacelink from '$lib/replace';
 
@@ -25,17 +24,22 @@
 		}
 	}).use(replacelink);
 	// see https://kit.svelte.dev/docs#loading
-	export const load = async () => {
-		const doc = await get('pages/about?_expand=image');
-		const rendered = md.render(doc.body,doc);
-		doc['rendered'] = rendered;
-		return {
-			props: {
-				page: doc
-			}
-		};
+	export const load = async ({ page,fetch }) => {
+		const  id = 'about';
+		const res = await fetch(`/api/pages/${id}.json`);
+		if (res.ok) {
+			const {page} = await res.json();
+			const rendered = md.render(page.body, page);
+			page['rendered'] = rendered;
+			return {
+				props: {
+					page: page
+				}
+			};
+		}
 	};
 </script>
+
 
 <script>
 	export let page;

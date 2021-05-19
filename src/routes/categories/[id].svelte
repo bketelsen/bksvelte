@@ -1,10 +1,10 @@
 <script context="module">
 	export const prerender = true;
 	export const hydrate = false;
-	import { get } from '$lib/api';
 	// see https://kit.svelte.dev/docs#loading
 	export const load = async ({ page }) => {
 		const { id } = page.params;
+		console.log(id)
 		const res = await fetch(`/api/categories/${id}.json`);
 		if (res.ok) {
 			const { category } = await res.json();

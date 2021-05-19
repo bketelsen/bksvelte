@@ -6,7 +6,7 @@
 
 	import 'highlight.js/styles/vs2015.css';
 	import hljs from 'highlight.js';
-	import imageTag from '$lib/image';
+///	import imageTag from '$lib/image';
 	// Initialize `markdown-it`
 	const md = new MarkdownIt({
 		replaceLink: function (link, env) {
@@ -32,8 +32,8 @@
 			const {article} = await res.json();
 			const rendered = md.render(article.body, article);
 			article['rendered'] = rendered;
-			const tag = await imageTag(article.image);
-			article.image['tag'] = tag;
+//				const tag = await imageTag(article.image);
+	//		article.image['tag'] = tag;
 			return {
 				props: {
 					article: article

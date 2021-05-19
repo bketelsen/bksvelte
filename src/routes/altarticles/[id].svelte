@@ -1,17 +1,17 @@
 <script context="module">
 	export const prerender = true;
-	import { get} from '$lib/api';
+	export const hydrate = false;
 	import MarkdownIt from 'markdown-it';
 	import replacelink from '$lib/replace';
 
 	import 'highlight.js/styles/vs2015.css';
 	import hljs from 'highlight.js';
-
+///	import imageTag from '$lib/image';
 	// Initialize `markdown-it`
 	const md = new MarkdownIt({
 		replaceLink: function (link, env) {
-        return "https://bkapi.vercel.app" + link;
-    },
+			return 'https://bkapi.vercel.app' + link;
+		},
 		highlight: function (str, lang) {
 			if (lang && hljs.getLanguage(lang)) {
 				try {
@@ -25,19 +25,24 @@
 		}
 	}).use(replacelink);
 	// see https://kit.svelte.dev/docs#loading
-	export const load = async ({ page }) => {
+	export const load = async ({ page,fetch }) => {
 		const { id } = page.params;
-		const doc = await get(`articles/${id}?_expand=category&_expand=image`);		
-
-		const rendered = md.render(doc.body);
-		doc['rendered'] = rendered;
-		return {
-			props: {
-				article: doc
-			}
-		};
+		const res = await fetch(`/api/articles/${id}.json`);
+		if (res.ok) {
+			const {article} = await res.json();
+			const rendered = md.render(article.body, article);
+			article['rendered'] = rendered;
+//				const tag = await imageTag(article.image);
+	//		article.image['tag'] = tag;
+			return {
+				props: {
+					article: article
+				}
+			};
+		}
 	};
 </script>
+
 <script>
 	export let article;
 

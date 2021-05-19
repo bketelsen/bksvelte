@@ -1,7 +1,6 @@
 <script>
 
   export let article;
-  export let category;
   export let profile;
   export let avatar;
 
@@ -50,11 +49,11 @@
 
 <div>
 	<div>
-		<a href="/categories/{category.id}" class="inline-block">
+		<a href="/categories/{article.category && article.category.id}" class="inline-block">
 			<span
-				class="{pillColor(category.color)}"
+				class="{pillColor(article.category.color)}"
 			>
-				{category.name}
+				{article.category && article.category.name}
 			</span>
 		</a>
 	</div>
