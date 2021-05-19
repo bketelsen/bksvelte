@@ -6,6 +6,7 @@ on:
   push:
     paths:
       - .github/workflows/flat.yml
+      - ./.github/workflows/resolve.js
 jobs:
   scheduled:
     runs-on: ubuntu-latest
@@ -19,3 +20,4 @@ jobs:
         with:
           http_url: https://github.com/bketelsen/bkapi/releases/download/blox/data.json
           downloaded_filename: src/routes/api/data.json
+          postprocess: ./.github/workflows/resolve.js
