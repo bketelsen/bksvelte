@@ -2,10 +2,11 @@
 	export const prerender = true;
 	export const hydrate = false;
 	// see https://kit.svelte.dev/docs#loading
-	export const load = async ({ page }) => {
+	export const load = async ({ page ,fetch }) => {
 		const { id } = page.params;
-		console.log(id)
-		const res = await fetch(`/api/categories/${id}.json`);
+		const url = `/api/categories/${page.params.id}.json`;
+
+		const res = await fetch(url);
 		if (res.ok) {
 			const { category } = await res.json();
 

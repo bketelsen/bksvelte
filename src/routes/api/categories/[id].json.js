@@ -10,7 +10,7 @@ export async function get({params}) {
 	const {categories} = data;
 
 	const category = categories.find((a) => a.id === id)
-	
+
 	if (category) {
 		return {
 			body: {
