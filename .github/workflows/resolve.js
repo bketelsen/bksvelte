@@ -45,7 +45,7 @@ console.log("Wrote a post process file")
 // await removeFile('./btc-price.json') // equivalent to removeFile('btc-price.json')
 
 function resolve(id, collection) {
-    return collection.find((p) => p.id === id)
+    return collection.find((p) => p["id"] === id)
 }
 
 function resolveProfiles() {
