@@ -6,7 +6,7 @@
 
 	import 'highlight.js/styles/vs2015.css';
 	import hljs from 'highlight.js';
-///	import imageTag from '$lib/image';
+	///	import imageTag from '$lib/image';
 	// Initialize `markdown-it`
 	const md = new MarkdownIt({
 		replaceLink: function (link, env) {
@@ -25,15 +25,15 @@
 		}
 	}).use(replacelink);
 	// see https://kit.svelte.dev/docs#loading
-	export const load = async ({ page,fetch }) => {
+	export const load = async ({ page, fetch }) => {
 		const { id } = page.params;
 		const res = await fetch(`/api/articles/${id}.json`);
 		if (res.ok) {
-			const {article} = await res.json();
+			const { article } = await res.json();
 			const rendered = md.render(article.body, article);
 			article['rendered'] = rendered;
-//				const tag = await imageTag(article.image);
-	//		article.image['tag'] = tag;
+			//				const tag = await imageTag(article.image);
+			//		article.image['tag'] = tag;
 			return {
 				props: {
 					article: article
