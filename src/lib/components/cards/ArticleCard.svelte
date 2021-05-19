@@ -1,8 +1,19 @@
 <script>
     import SharpImage from '../util/SharpImage.svelte';
-
     export let article;
     const baseurl = import.meta.env.VITE_ASSET_BASE
+
+/*
+    <SharpImage 
+    class="object-cover w-full h-48"
+    {baseurl} 
+    src="{article.image.file_name}" 
+    alt="{article.image.alt}" 
+    width="{article.image.width}" 
+    height="{article.image.height}" />
+  </div>
+
+*/
 
   const colorMap = {
 	  "red": {
@@ -49,6 +60,7 @@
 
 <div class="flex flex-col overflow-hidden rounded-lg shadow-lg">
   <div class="flex-shrink-0">
+    
     <SharpImage 
     class="object-cover w-full h-48"
     {baseurl} 

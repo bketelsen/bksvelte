@@ -7,9 +7,15 @@
 
 	// see https://kit.svelte.dev/docs#loading
 	export const load = async ({ fetch }) => {
-		const categories = await get("categories");
-		return {
-			props: { categories }
+		const res = await fetch('/api/categories.json');
+		if (res.ok) {
+			const {categories} = await res.json();
+
+			return {
+				props: {
+					categories
+				}
+			};
 		};
 	};
 </script>

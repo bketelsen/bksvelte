@@ -7,14 +7,14 @@ import  data  from '$lib/data.json';
 export async function get({params}) {
 
 	const { id } = params;
-	const {articles} = data;
+	const {categories} = data;
 
-	const article = articles.find((a) => a.id === id)
+	const category = categories.find((a) => a.id === id)
 	
-	if (article) {
+	if (category) {
 		return {
 			body: {
-				article
+				category
 			}
 		};
 	}

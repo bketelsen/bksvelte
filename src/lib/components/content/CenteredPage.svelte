@@ -42,11 +42,13 @@ const base = import.meta.env.VITE_ASSET_BASE;
           <span class="block text-base font-semibold tracking-wide text-center uppercase text-contrast-600">{headline}</span>
           <span class="block mt-2 text-3xl font-extrabold tracking-tight text-center leading-8 text-contrast-900 sm:text-4xl">{title}</span>
         </h1>
-        {#if image }
-          <SharpImage 
-          baseurl="{base}"
-          src="{image.file_name}" alt="{image.alt}" width="{image.width}" height="{image.height}"
-        />
+        {#if image.tag }
+        {@html image.tag}
+        {:else }
+        <SharpImage 
+        baseurl="{base}"
+        src="{image.file_name}" alt="{image.alt}" width="{image.width}" height="{image.height}"
+      />
         {/if}
         <p class="mt-8 text-xl text-main-500 leading-8">{lede}</p>
       </div>

@@ -37,6 +37,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@11ty/eleventy-img": "^0.8.3",
 		"@fontsource/fira-mono": "^4.3.0",
 		"@lukeed/uuid": "^2.0.0",
 		"@mattjennings/heroicons-svelte": "^0.0.1",

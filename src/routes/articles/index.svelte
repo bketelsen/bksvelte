@@ -1,19 +1,26 @@
 <script context="module">
 	export const prerender = true;
 	export const hydrate = false;
-	import { get } from '$lib/api';
 
 	// see https://kit.svelte.dev/docs#loading
 	export const load = async ({ fetch }) => {
-		const articles = await get("articles?_expand=category&_expand=image");
-		return {
-			props: { articles: articles}
-		};
+		const res = await fetch('/api/articles.json');
+		if (res.ok) {
+			const {articles} = await res.json();
+
+			return {
+				props: {
+					articles
+				}
+			};
+		}
 	};
 </script>
 
 <script>
-	import { ArticleCard, BodyWithHeader, CardGroup } from 'components';
+	import  ArticleCard from '$lib/components/cards/ArticleCard.svelte';
+	import BodyWithHeader from '$lib/components/containers/BodyWithHeader.svelte';
+	import CardGroup  from '$lib/components/containers/CardGroup.svelte';
 	let title = 'Articles';
 	let heading = 'Blog Posts';
 	let description = 'News from the Edge';
