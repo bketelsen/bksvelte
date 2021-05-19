@@ -15,7 +15,7 @@
     const webp = baseurl + src + '?' + webpq.toString()
  
     var pngq = new URLSearchParams();
-    webpq.append("f","png")
+    pngq.append("f","png")
 
     const png = baseurl + src + '?' + pngq.toString()
 
