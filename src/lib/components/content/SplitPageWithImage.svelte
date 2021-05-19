@@ -21,7 +21,7 @@
 	>
 		<div class="lg:col-start-2 lg:pl-8">
 			<div class="mx-auto text-base max-w-prose lg:max-w-lg lg:ml-auto lg:mr-0">
-				<h2 class="font-semibold tracking-wide uppercase leading-6 text-contrast-600">
+				<h2 class="font-semibold tracking-wide uppercase leading-6 text-contrast-800">
 					{headline}
 				</h2>
 				<h3 class="mt-2 text-3xl font-extrabold tracking-tight leading-8 text-contrast-800 sm:text-4xl">

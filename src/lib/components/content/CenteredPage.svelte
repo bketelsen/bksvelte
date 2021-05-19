@@ -39,8 +39,8 @@ const base = import.meta.env.VITE_ASSET_BASE;
     <div class="relative px-4 sm:px-6 lg:px-8">
       <div class="mx-auto text-lg max-w-prose">
         <h1 class="pb-4 sm:pb-2">
-          <span class="block text-base font-semibold tracking-wide text-center uppercase text-contrast-600">{headline}</span>
-          <span class="block mt-2 text-3xl font-extrabold tracking-tight text-center leading-8 text-contrast-900 sm:text-4xl">{title}</span>
+          <span class="block text-base font-semibold tracking-wide text-center uppercase text-contrast-800">{headline}</span>
+          <span class="block mt-2 text-3xl font-extrabold tracking-tight text-center leading-8 text-contrast-800 sm:text-4xl">{title}</span>
         </h1>
         {#if image.tag }
         {@html image.tag}

@@ -13,7 +13,7 @@
       <div class="absolute top-0 bottom-0 hidden w-screen lg:block bg-main-50 left-3/4"></div>
       <div class="mx-auto text-base max-w-prose lg:grid lg:grid-cols-2 lg:gap-8 lg:max-w-none">
         <div>
-          <h2 class="text-base font-semibold tracking-wide uppercase text-contrast-600">{headline}</h2>
+          <h2 class="text-base font-semibold tracking-wide uppercase text-contrast-800">{headline}</h2>
           <h3 class="mt-2 text-3xl font-extrabold leading-8 tracking-tight text-contrast-800 sm:text-4xl">{title}</h3>
         </div>
       </div>

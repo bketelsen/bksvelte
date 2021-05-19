@@ -10,7 +10,7 @@
       class="max-w-md px-4 mx-auto text-center sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl"
     >
       <h2
-        class="text-base font-semibold tracking-wider uppercase text-contrast-700"
+        class="text-base font-semibold tracking-wider uppercase text-contrast-800"
       >
         {title}
       </h2>
