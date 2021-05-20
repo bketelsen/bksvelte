@@ -1,3 +1,4 @@
+import {cacheImage} from '$lib/images'
 import  data  from '$lib/data.json';
 
 /**
@@ -12,6 +13,7 @@ export async function get({params}) {
 	const article = articles.find((a) => a.id === id)
 	
 	if (article) {
+		cacheImage(article.image.file_name)
 		return {
 			body: {
 				article
