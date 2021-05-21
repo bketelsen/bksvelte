@@ -34,6 +34,7 @@
 			article['rendered'] = rendered;
 			//				const tag = await imageTag(article.image);
 			//		article.image['tag'] = tag;
+			console.log(article)
 			return {
 				props: {
 					article: article
