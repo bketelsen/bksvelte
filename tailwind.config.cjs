@@ -22,33 +22,13 @@ module.exports = {
 		},
 		safelist: [/^svelte-[\d\w]+$/]
 	},
-	darkMode: 'class', // or 'media' or 'class'
 	theme: {
-		extend: {
-			fontFamily: {
-				sans: ['Inter var', ...defaultTheme.fontFamily.sans],
-			  },
-			colors: {
-				teal: colors.teal,
-				purple: colors.purple,
-				blue: colors.blue,
-				lime: colors.lime,
-				amber: colors.amber,
-				orange: colors.orange,
-				red: colors.red,
-				bluegray: colors.blueGray,
-				main: colors.gray,
-				bg: colors.gray,
-				contrast: colors.cyan
-			}
-		}
+
 	},
 	plugins: [
 		require('@tailwindcss/typography'),
 		require('@tailwindcss/forms'),
 		require('@tailwindcss/aspect-ratio'),
-		function ({ addUtilities, addComponents, e, prefix, config }) {
-			// add your plugin functionality here
-		}
+		require('daisyui'),
 	]
 };

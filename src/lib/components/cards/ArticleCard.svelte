@@ -3,17 +3,6 @@
     export let article;
     const baseurl = import.meta.env.VITE_ASSET_BASE
 
-/*
-    <SharpImage 
-    class="object-cover w-full h-48"
-    {baseurl} 
-    src="{article.image.file_name}" 
-    alt="{article.image.alt}" 
-    width="{article.image.width}" 
-    height="{article.image.height}" />
-  </div>
-
-*/
 
   const colorMap = {
 	  "red": {
@@ -58,46 +47,19 @@
 	}
 </script>
 
-<div class="flex flex-col overflow-hidden rounded-lg shadow-lg">
-  <div class="flex-shrink-0">
-    
-    <SharpImage 
-    class="object-cover w-full h-48"
-    {baseurl} 
-    src="{article.image.file_name}" 
-    alt="{article.image.alt}" 
-    width="{article.image.width}" 
-    height="{article.image.height}" />
-  </div>
-  <div class="flex flex-col justify-between flex-1 p-6 bg-white">
-    <div class="flex-1">
-      <p class="text-sm font-medium text-contrast-600">
-        <a href="/categories/{article.category_id}" class="hover:underline">
-          <span
-          class="{pillColor(article.category.color)}"
-        >
-        {article.category && article.category.name}
-        </span>
-         
-        </a>
-      </p>
-      <a href="/articles/{article.id}" class="block mt-2">
-        <p class="text-xl font-semibold text-contrast-900">
-          {article.title}
-        </p>
-        <p class="mt-3 text-base text-main-500">
-          {article.excerpt}
-        </p>
-      </a>
-    </div>
-    <div class="flex items-center mt-6">
-      <div>
-        <div class="flex space-x-1 text-sm text-main-500">
-          <time datetime="2020-03-10"> Mar 10, 2020 </time>
-          <span aria-hidden="true"> &middot; </span>
-          <span> 4 min read </span>
-        </div>
-      </div>
+<div class="card shadow-sm bg-accent text-accent-content">
+  <SharpImage 
+  class="object-cover w-full h-48"
+  {baseurl} 
+  src="{article.image.file_name}" 
+  alt="{article.image.alt}" 
+  width="{article.image.width}" 
+  height="{article.image.height}" />
+  <div class="card-body">
+    <h2 class="card-title">{article.title}</h2> 
+    <p>{article.excerpt}</p> 
+    <div class="card-actions">
+      <a class="btn btn-secondary">View Post</a>
     </div>
   </div>
 </div>

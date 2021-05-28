@@ -28,6 +28,8 @@
 	import BodyWithHeader from '$lib/components/containers/BodyWithHeader.svelte';
 	import CardGroup from '$lib/components/containers/CardGroup.svelte';
 	import ParagraphBrand from '$lib/components/sections/newsletter/ParagraphBrand.svelte';
+	import Info from '$lib/components/alerts/Info.svelte';
+
 </script>
 
 <svelte:head>

@@ -37,7 +37,7 @@
 						href={item.route}
 						sveltekit:prefetch
 						class="{item.route === $page.path
-							? 'border-contrast-500 text-main-900'
+							? 'text-main-900'
 							: 'border-transparent text-main-500 hover:border-main-300 hover:text-main-700'} inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
 					>
 						{item.name}

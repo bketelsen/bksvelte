@@ -1,31 +1,12 @@
-
-<div class="bg-bg-50">
-    <div class="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:py-16 lg:px-8">
-      <div class="px-6 py-6 bg-contrast-700 rounded-lg md:py-12 md:px-12 lg:py-16 lg:px-16 xl:flex xl:items-center">
-        <div class="xl:w-0 xl:flex-1">
-          <h2 class="text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
-            Want product news and updates?
-          </h2>
-          <p class="mt-3 max-w-3xl text-lg leading-6 text-contrast-200">
-            Sign up for our newsletter to stay up to date.
-          </p>
-        </div>
-        <div class="mt-8 sm:w-full sm:max-w-md xl:mt-0 xl:ml-8">
-          <form class="sm:flex">
-            <label for="emailAddress" class="sr-only">Email address</label>
-            <input id="emailAddress" name="emailAddress" type="email" autocomplete="email" required class="w-full border-white px-5 py-3 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-700 focus:ring-white rounded-md" placeholder="Enter your email">
-            <button type="submit" class="mt-3 w-full flex items-center justify-center px-5 py-3 border border-transparent shadow text-base font-medium rounded-md text-white bg-contrast-500 hover:bg-contrast-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-700 focus:ring-white sm:mt-0 sm:ml-3 sm:w-auto sm:flex-shrink-0">
-              Notify me
-            </button>
-          </form>
-          <p class="mt-3 text-sm text-contrast-200">
-            We care about the protection of your data. Read our
-            <a href="#" class="text-white font-medium underline">
-              Privacy Policy.
-            </a>
-          </p>
-        </div>
-      </div>
+<div class="max-w-md px-4 mx-auto mt-12 grid gap-8 sm:max-w-lg sm:px-6 lg:px-8  lg:max-w-7xl">
+<div class="card bg-secondary text-secondary-content lg:card-side bordered">
+  <div class="card-body">
+    <h2 class="card-title">Get Updates</h2> 
+    <p>Sign up to get notifications of new posts</p> 
+    <div class="card-actions">
+      <button class="btn btn-primary">Sign Me Up!</button> 
+      <button class="btn btn-ghost">Privacy & More Info</button>
     </div>
   </div>
-  
+</div>
+</div>
