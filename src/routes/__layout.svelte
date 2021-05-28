@@ -20,9 +20,6 @@
 	import PageContainer from '$lib/components/containers/PageContainer.svelte';
 	import NavBar from '$lib/components/nav/NavBar.svelte';
 	import SimpleCentered from '$lib/components/footers/SimpleCentered.svelte';
-
-
-
 	import '../app.postcss';
 </script>
 
