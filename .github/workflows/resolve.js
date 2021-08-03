@@ -18,7 +18,7 @@ const images = json["images"];
 const profiles = json["profiles"];
 const sections = json["sections"];
 const websites = json["websites"];
-
+console.log("starting")
 const rProfiles = resolveProfiles();
 const rCategories = resolveCategories();
 const rWebsites = resolveWebsites();
