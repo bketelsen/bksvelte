@@ -18,6 +18,6 @@ jobs:
       - name: Fetch data
         uses: githubocto/flat@v2
         with:
-          http_url: https://github.com/bketelsen/bkapi/releases/download/blox/data.json
+          http_url: https://github.com/bketelsen/nextweb/releases/download/blox/data.json
           downloaded_filename: src/lib/data.json
           postprocess: ./.github/workflows/resolve.js
