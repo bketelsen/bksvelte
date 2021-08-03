@@ -47,16 +47,16 @@ function resolve(id, collection) {
 
 function resolveProfiles() {
     return profiles.map((w) => {
-        if (w.image_id) {
-            w["image"] = resolve(w.image_id, images)
+        if (w.image) {
+            w["image"] = resolve(w.image, images)
         }
         return w;
     })
 }
 function resolveSections() {
     return sections.map((w) => {
-        if (w.image_id) {
-            w["image"] = resolve(w.image_id, images)
+        if (w.image) {
+            w["image"] = resolve(w.image, images)
         }
         return w;
     })
@@ -64,46 +64,46 @@ function resolveSections() {
 function resolveWebsites() {
     return websites.map((w) => {
         console.log(w)
-        if (w.profile_id) {
-            console.log(w.profile_id)
+        if (w.profile) {
+            console.log(w.profile)
             console.log(rProfiles)
-            w["profile"] = resolve(w.profile_id, rProfiles)
+            w["profile"] = resolve(w.profile, rProfiles)
         }
         return w;
     })
 }
 function resolveCategories() {
     return categories.map((w) => {
-        if (w.image_id) {
-            w["image"] = resolve(w.image_id, images)
+        if (w.image) {
+            w["image"] = resolve(w.image, images)
         }
         return w;
     })
 }
 function resolveArticles() {
     return articles.map((a) => {
-        if (a.profile_id) {
-            a["profile"] = resolve(a.profile_id, rProfiles)
+        if (a.profile) {
+            a["profile"] = resolve(a.profile, rProfiles)
         }
-        if (a.image_id) {
-            a["image"] = resolve(a.image_id, images)
+        if (a.image) {
+            a["image"] = resolve(a.image, images)
         }
-        if (a.category_id) {
-            a["category"] = resolve(a.category_id, rCategories)
+        if (a.category) {
+            a["category"] = resolve(a.category, rCategories)
         }
         return a;
     })
 }
 function resolvePages() {
     return pages.map((a) => {
-        if (a.image_id) {
-            a["image"] = resolve(a.image_id, images)
+        if (a.image) {
+            a["image"] = resolve(a.image, images)
         }
-        if (a.category_id) {
-            a["category"] = resolve(a.category_id, rCategories)
+        if (a.category) {
+            a["category"] = resolve(a.category, rCategories)
         }
-        if (a.section_id) {
-            a["section"] = resolve(a.section_id, rSections)
+        if (a.section) {
+            a["section"] = resolve(a.section, rSections)
         }
         return a;
     })
